@@ -1,18 +1,12 @@
 // file: tests/web/trn-01.spec.ts
 import { test, expect, signIn } from '../../helpers/web';
 
-const unique = () => Math.random().toString(36).slice(2, 6);
+const unique = () => Array.from({ length: 4 }, () => 'abcdefghijklmnopqrstuvwxyz'[Math.floor(Math.random() * 26)]).join('');
 const mobile = () => '09' + String(Date.now()).slice(-9);
 const name = () => `Ana ${unique()} Dela Cruz`;
 
 async function setup(page: any, nameTag = 'Mitch-6973') {
-  await page.goto('/');
-
-  const nameBox = page.getByText('Your name');
-  await expect(nameBox).toBeVisible();
-
-  await page.getByRole('textbox').first().fill(nameTag);
-  await page.getByRole('button', { name: 'Save' }).click();
+  await signIn(page, nameTag);
 }
 
 async function openCreate(page: any) {

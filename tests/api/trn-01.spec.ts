@@ -7,7 +7,7 @@ const baseHeaders = {
   'Content-Type': 'application/json',
 };
 
-const unique = () => Math.random().toString(36).slice(2, 6);
+const unique = () => Array.from({ length: 4 }, () => 'abcdefghijklmnopqrstuvwxyz'[Math.floor(Math.random() * 26)]).join('');
 const mobile = () =>
   '09' + String(Date.now()).slice(-9);
 
