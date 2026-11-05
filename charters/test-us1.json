@@ -804,6 +804,15 @@
       ]
      }
     ]
+   },
+   {
+    "id": "n7t",
+    "text": "Test run 2026-11-05 13:07: 0 passed, 0 flaky, 0 failed, 0 blocked, 4 not tested",
+    "note": "Browsers: chrome\nBase URL: https://city-treasurer-staging.aiqe.pro\nReport: test-runs/20261105-210726/index.html",
+    "collapsed": false,
+    "statusId": null,
+    "highlight": null,
+    "children": []
    }
   ]
  }

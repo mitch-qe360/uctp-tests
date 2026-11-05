@@ -9,14 +9,8 @@ const headers = {
   'Content-Type': 'application/json',
 };
 
-test.fixme(
-  'I1 · AC-2 · ASK: compare created taxpayer with GET response using exact response schema and status code',
-);
+test.fixme('I1 · AC-2 · ASK: compare created taxpayer with GET response using exact response schema and status code', async () => {});
 
-test.fixme(
-  'I2 · AC-3 · ASK: compare trimmed name in creation message, POST response and GET response',
-);
+test.fixme('I2 · AC-3 · ASK: compare trimmed name in creation message, POST response and GET response', async () => {});
 
-test.fixme(
-  'I3 · AC-7 · ASK: compare empty GET response and empty screen under Mitch-6973-other',
-);
+test.fixme('I3 · AC-7 · ASK: compare empty GET response and empty screen under Mitch-6973-other', async () => {});
