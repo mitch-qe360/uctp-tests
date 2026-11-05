@@ -10,8 +10,7 @@ async function setup(page: any, nameTag = 'Mitch-6973') {
 }
 
 async function openCreate(page: any) {
-  await page.getByText('Training setup').click();
-  await page.getByText('Create my data').click();
+  await page.getByRole('link', { name: 'Training setup' }).click();
 }
 
 async function openMyTaxpayers(page: any) {
@@ -30,10 +29,8 @@ test('W1 · AC-1 · show created message for a unique taxpayer', async ({ page }
   await page.getByLabel('Mobile (09XXXXXXXXX)').fill(phone);
   await page.getByRole('button', { name: 'Create taxpayer' }).click();
 
-  await expect(page.getByText(
-    `${fullName} created — mobile ${phone}.`,
-    { exact: true }
-  )).toBeVisible();
+  // The message is split into bold name + code mobile, so check the page text, not one element.
+  await expect(page.locator('body')).toContainText(`${fullName} created — mobile ${phone}.`);
 });
 
 test.fixme('W3 · AC-2 · ASK: exact empty-list screen state before taxpayer creation', async () => {});
