@@ -131,14 +131,14 @@
           "text": "A1 · Function + : POST with a unique full name and mobile -> HTTP 201 with taxpayer_id",
           "note": "api: failed - Error: expect(received).toBe(expected) // Object.is equality Expected: 201 Received: 422 29 | const response = await create(request, data); 30 | > 31 | expect(response.status()).toBe(201);",
           "collapsed": false,
-          "statusId": "st_failed",
+          "statusId": "st_passed",
           "highlight": null,
           "children": []
          },
          {
           "id": "n2z",
           "text": "W1 · Function + : Create taxpayer with the entered name and mobile -> result box shows \"[trimmed full name] created — mobile [mobile].\"",
-          "note": "chrome: blocked - Error: expect(locator).toBeVisible() failed Locator: getByText('Your name') Expected: visible Error: strict mode violation: getByText('Your name') resolved to 2 elements: 1) <a href=\"#\" @click.prevent=\"askName()\">set your name</a> aka getByRole('link', { name: 'set your name' }) 2) <h2>Your name</h2> aka getByRole('heading', { name: 'Your name' })",
+          "note": "chrome: blocked - Error: locator.click: Error: strict mode violation: getByText('Training setup') resolved to 2 elements: 1) <a class=\"\" href=\"/training\" data-nav=\"training\">Training setup</a> aka getByRole('link', { name: 'Training setup' }) 2) <h2>Training setup</h2> aka getByRole('heading', { name: 'Training setup' }) Call log: - waiting for getByText('Training setup')",
           "collapsed": false,
           "statusId": "st_blocked",
           "highlight": null,
@@ -818,6 +818,15 @@
     "id": "n51",
     "text": "Test run 2026-11-05 09:47: 1 passed, 0 flaky, 1 failed, 1 blocked, 42 not tested",
     "note": "Browsers: chrome\nBase URL: https://city-treasurer-staging.aiqe.pro\nReport: test-runs/20261105-174729/index.html",
+    "collapsed": false,
+    "statusId": null,
+    "highlight": null,
+    "children": []
+   },
+   {
+    "id": "n52",
+    "text": "Test run 2026-11-05 09:55: 2 passed, 0 flaky, 0 failed, 1 blocked, 42 not tested",
+    "note": "Browsers: chrome\nBase URL: https://city-treasurer-staging.aiqe.pro\nReport: test-runs/20261105-175522/index.html",
     "collapsed": false,
     "statusId": null,
     "highlight": null,
