@@ -43,8 +43,8 @@
   "not_tested": [],
   "report": "US1 - 2026-11-05 174729.html",
   "messages": [],
-  "pushed": false,
-  "push_message": "",
+  "pushed": true,
+  "push_message": "Pushed. CI runs on GitHub too.",
   "folder": "test-runs/2026-11-05",
   "only": [
     "A13",
