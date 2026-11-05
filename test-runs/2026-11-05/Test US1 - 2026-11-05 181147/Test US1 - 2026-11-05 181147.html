@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Test run 20261105-175522</title>
+<title>Test run 20261105-181147</title>
 <style>
 :root{--ok:#15803d;--flaky:#b45309;--bad:#b91c1c;--blocked:#d97706;--grey:#6b7280;--line:#e5e7eb}
 body{font:15px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;margin:24px;color:#111827;background:#fff}
@@ -22,9 +22,10 @@ img{max-width:100%;border:1px solid var(--line)}
 .print{font:inherit;padding:6px 14px;border:1px solid #1d4ed8;background:#1d4ed8;color:#fff;border-radius:6px;cursor:pointer}
 @media print{tr.detail{display:table-row} .noprint{display:none} body{margin:0} tr{break-inside:avoid} img{max-height:90vh}}
 </style></head><body>
-<h1>Test run 20261105-175522</h1>
-<p class="meta">https://city-treasurer-staging.aiqe.pro · browsers: chrome · 2026-11-05T09:55:22.270Z to 2026-11-05T09:55:31.146Z</p>
-<div class="story">US1</div>
+<h1>Test run 20261105-181147</h1>
+<p class="meta">https://city-treasurer-staging.aiqe.pro · browsers: chrome · 2026-11-05T10:11:47.939Z to 2026-11-05T10:11:56.060Z</p>
+<p class="meta">On GitHub Pages about a minute after the push: <a href="https://mitch-qe360.github.io/uctp-tests/2026-11-05/Test%20US1%20-%202026-11-05%20181147/Test%20US1%20-%202026-11-05%20181147.html">https://mitch-qe360.github.io/uctp-tests/2026-11-05/Test%20US1%20-%202026-11-05%20181147/Test%20US1%20-%202026-11-05%20181147.html</a></p>
+<div class="story">Test US1</div>
 <div class="counts"><div class="count"><b>2</b>Passed</div><div class="count"><b>0</b>Flaky</div><div class="count"><b>0</b>Failed</div><div class="count"><b>1</b>Blocked</div><div class="count"><b>0</b>Not tested</div></div>
 
 <p class="noprint"><button class="print" type="button" onclick="window.print()">Download PDF</button> <span class="hint">Choose "Save as PDF" in the print window. Click a red or amber row to see why.</span></p>
@@ -32,14 +33,14 @@ img{max-width:100%;border:1px solid var(--line)}
 <tr class="row passed" data-i="0">
 <td>A1</td><td>AC-1</td><td>create taxpayer with unique name and mobile</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
 <tr class="row passed" data-i="1">
-<td>A13</td><td>AC-5</td><td>refuse the one-character name &quot;A&quot;</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<td>A4</td><td>AC-1</td><td>refuse duplicate mobile</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
 <tr class="row blocked click" data-i="2" tabindex="0">
 <td>W1</td><td>AC-1</td><td>show created message for a unique taxpayer</td><td>chrome</td><td><span class="pill blocked">Blocked</span></td></tr><tr class="detail" id="d2"><td colspan="5"><pre>Error: locator.click: Error: strict mode violation: getByText(&#39;Training setup&#39;) resolved to 2 elements:
     1) &lt;a class=&quot;&quot; href=&quot;/training&quot; data-nav=&quot;training&quot;&gt;Training setup&lt;/a&gt; aka getByRole(&#39;link&#39;, { name: &#39;Training setup&#39; })
     2) &lt;h2&gt;Training setup&lt;/h2&gt; aka getByRole(&#39;heading&#39;, { name: &#39;Training setup&#39; })
 
 Call log:
-  - waiting for getByText(&#39;Training setup&#39;)</pre><img src="US1%20-%202026-11-05%20175522/artifacts/chrome/web-trn-01-W1-%C2%B7-AC-1-%C2%B7-sho-5b4c3-ssage-for-a-unique-taxpayer-chrome-retry3/attachments/screenshot-82ff293f6199910ac09beee1977ca7cf4ed9b35d.png" alt="Screenshot of W1 in chrome"></td></tr>
+  - waiting for getByText(&#39;Training setup&#39;)</pre><img src="artifacts/chrome/web-trn-01-W1-%C2%B7-AC-1-%C2%B7-sho-5b4c3-ssage-for-a-unique-taxpayer-chrome-retry3/attachments/screenshot-b6a4103d7e5a53d4b1e1dee47f00a3aea168b98f.png" alt="Screenshot of W1 in chrome"></td></tr>
 </tbody></table>
 <script>
 document.querySelectorAll('tr.click').forEach(function (tr) {
