@@ -1,0 +1,783 @@
+{
+  "config": {
+    "argv": [
+      "/usr/local/bin/node",
+      "/Users/michellechua/uctp-tests/node_modules/@playwright/test/cli.js",
+      "test",
+      "tests/api",
+      "--project=api",
+      "--workers=1",
+      "--retries=3",
+      "--pass-with-no-tests",
+      "--grep",
+      "(?:^|\\s)(A13|A1|W1) ·"
+    ],
+    "configFile": "/Users/michellechua/uctp-tests/playwright.config.ts",
+    "rootDir": "/Users/michellechua/uctp-tests/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/michellechua/uctp-tests/test-runs/2026-11-05/US1 - 2026-11-05 173345/artifacts/api",
+        "repeatEach": 1,
+        "retries": 3,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "api",
+        "name": "api",
+        "testDir": "/Users/michellechua/uctp-tests/tests/api",
+        "testIgnore": [],
+        "testMatch": [
+          "/.*\\.spec\\.(ts|js|mjs)$/"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/michellechua/uctp-tests/test-runs/2026-11-05/US1 - 2026-11-05 173345/artifacts/api",
+        "repeatEach": 1,
+        "retries": 3,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chrome",
+        "name": "chrome",
+        "testDir": "/Users/michellechua/uctp-tests/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/(web|integration)[\\\\/].*\\.spec\\.(ts|js|mjs)$/"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/michellechua/uctp-tests/test-runs/2026-11-05/US1 - 2026-11-05 173345/artifacts/api",
+        "repeatEach": 1,
+        "retries": 3,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/michellechua/uctp-tests/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/(web|integration)[\\\\/].*\\.spec\\.(ts|js|mjs)$/"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/Users/michellechua/uctp-tests/test-runs/2026-11-05/US1 - 2026-11-05 173345/raw/api.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "api/trn-01-register-taxpayer.spec.ts",
+      "file": "api/trn-01-register-taxpayer.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "TRN-01 · Register a taxpayer · API",
+          "file": "api/trn-01-register-taxpayer.spec.ts",
+          "line": 50,
+          "column": 6,
+          "specs": [
+            {
+              "title": "A1 · AC-1 · create taxpayer with a unique name and mobile",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 378,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m201\u001b[39m\nReceived: \u001b[31m422\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m201\u001b[39m\nReceived: \u001b[31m422\u001b[39m\n    at /Users/michellechua/uctp-tests/tests/api/trn-01-register-taxpayer.spec.ts:55:31",
+                        "location": {
+                          "file": "/Users/michellechua/uctp-tests/tests/api/trn-01-register-taxpayer.spec.ts",
+                          "column": 31,
+                          "line": 55
+                        },
+                        "snippet": "  53 |     const response = await create(request, data);\n  54 |\n> 55 |     expect(response.status()).toBe(201);\n     |                               ^\n  56 |     const body = await response.json();\n  57 |     expect(body.taxpayer_id).toBeTruthy();\n  58 |   });"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/michellechua/uctp-tests/tests/api/trn-01-register-taxpayer.spec.ts",
+                            "column": 31,
+                            "line": 55
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m201\u001b[39m\nReceived: \u001b[31m422\u001b[39m\n\n  53 |     const response = await create(request, data);\n  54 |\n> 55 |     expect(response.status()).toBe(201);\n     |                               ^\n  56 |     const body = await response.json();\n  57 |     expect(body.taxpayer_id).toBeTruthy();\n  58 |   });\n    at /Users/michellechua/uctp-tests/tests/api/trn-01-register-taxpayer.spec.ts:55:31"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T09:33:46.755Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/michellechua/uctp-tests/test-runs/2026-11-05/US1 - 2026-11-05 173345/artifacts/api/trn-01-register-taxpayer-T-2a82e-th-a-unique-name-and-mobile-api/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/michellechua/uctp-tests/tests/api/trn-01-register-taxpayer.spec.ts",
+                        "column": 31,
+                        "line": 55
+                      }
+                    },
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 512,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m201\u001b[39m\nReceived: \u001b[31m422\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m201\u001b[39m\nReceived: \u001b[31m422\u001b[39m\n    at /Users/michellechua/uctp-tests/tests/api/trn-01-register-taxpayer.spec.ts:55:31",
+                        "location": {
+                          "file": "/Users/michellechua/uctp-tests/tests/api/trn-01-register-taxpayer.spec.ts",
+                          "column": 31,
+                          "line": 55
+                        },
+                        "snippet": "  53 |     const response = await create(request, data);\n  54 |\n> 55 |     expect(response.status()).toBe(201);\n     |                               ^\n  56 |     const body = await response.json();\n  57 |     expect(body.taxpayer_id).toBeTruthy();\n  58 |   });"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/michellechua/uctp-tests/tests/api/trn-01-register-taxpayer.spec.ts",
+                            "column": 31,
+                            "line": 55
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m201\u001b[39m\nReceived: \u001b[31m422\u001b[39m\n\n  53 |     const response = await create(request, data);\n  54 |\n> 55 |     expect(response.status()).toBe(201);\n     |                               ^\n  56 |     const body = await response.json();\n  57 |     expect(body.taxpayer_id).toBeTruthy();\n  58 |   });\n    at /Users/michellechua/uctp-tests/tests/api/trn-01-register-taxpayer.spec.ts:55:31"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-11-05T09:33:47.388Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/michellechua/uctp-tests/test-runs/2026-11-05/US1 - 2026-11-05 173345/artifacts/api/trn-01-register-taxpayer-T-2a82e-th-a-unique-name-and-mobile-api-retry1/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/michellechua/uctp-tests/tests/api/trn-01-register-taxpayer.spec.ts",
+                        "column": 31,
+                        "line": 55
+                      }
+                    },
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 623,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 2,
+                      "startTime": "2026-11-05T09:33:48.152Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "flaky"
+                }
+              ],
+              "id": "7e787a5d1300e50811c5-1dacb763a2b6241c9203",
+              "file": "api/trn-01-register-taxpayer.spec.ts",
+              "line": 51,
+              "column": 7
+            },
+            {
+              "title": "A13 · AC-4 · create taxpayer using an unregistered mobile",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 296,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T09:33:48.797Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "7e787a5d1300e50811c5-57c21675351f9e4e11b2",
+              "file": "api/trn-01-register-taxpayer.spec.ts",
+              "line": 182,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "api/trn-01.spec.ts",
+      "file": "api/trn-01.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "A1 · AC-1 · create taxpayer with unique name and mobile",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "fixme",
+                  "location": {
+                    "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                    "line": 52,
+                    "column": 6
+                  }
+                },
+                {
+                  "type": "fixme",
+                  "location": {
+                    "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                    "line": 54,
+                    "column": 6
+                  }
+                },
+                {
+                  "type": "fixme",
+                  "location": {
+                    "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                    "line": 56,
+                    "column": 6
+                  }
+                },
+                {
+                  "type": "fixme",
+                  "location": {
+                    "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                    "line": 58,
+                    "column": 6
+                  }
+                },
+                {
+                  "type": "fixme",
+                  "location": {
+                    "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                    "line": 60,
+                    "column": 6
+                  }
+                },
+                {
+                  "type": "fixme",
+                  "location": {
+                    "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                    "line": 93,
+                    "column": 6
+                  }
+                },
+                {
+                  "type": "fixme",
+                  "location": {
+                    "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                    "line": 95,
+                    "column": 6
+                  }
+                },
+                {
+                  "type": "fixme",
+                  "location": {
+                    "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                    "line": 149,
+                    "column": 6
+                  }
+                },
+                {
+                  "type": "fixme",
+                  "location": {
+                    "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                    "line": 151,
+                    "column": 6
+                  }
+                },
+                {
+                  "type": "fixme",
+                  "location": {
+                    "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                    "line": 192,
+                    "column": 6
+                  }
+                },
+                {
+                  "type": "fixme",
+                  "location": {
+                    "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                    "line": 194,
+                    "column": 6
+                  }
+                },
+                {
+                  "type": "fixme",
+                  "location": {
+                    "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                    "line": 196,
+                    "column": 6
+                  }
+                },
+                {
+                  "type": "fixme",
+                  "location": {
+                    "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                    "line": 198,
+                    "column": 6
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "api",
+              "projectName": "api",
+              "results": [
+                {
+                  "workerIndex": -1,
+                  "parallelIndex": -1,
+                  "status": "skipped",
+                  "duration": 0,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T09:33:49.116Z",
+                  "annotations": [
+                    {
+                      "type": "fixme",
+                      "location": {
+                        "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                        "line": 52,
+                        "column": 6
+                      }
+                    },
+                    {
+                      "type": "fixme",
+                      "location": {
+                        "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                        "line": 54,
+                        "column": 6
+                      }
+                    },
+                    {
+                      "type": "fixme",
+                      "location": {
+                        "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                        "line": 56,
+                        "column": 6
+                      }
+                    },
+                    {
+                      "type": "fixme",
+                      "location": {
+                        "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                        "line": 58,
+                        "column": 6
+                      }
+                    },
+                    {
+                      "type": "fixme",
+                      "location": {
+                        "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                        "line": 60,
+                        "column": 6
+                      }
+                    },
+                    {
+                      "type": "fixme",
+                      "location": {
+                        "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                        "line": 93,
+                        "column": 6
+                      }
+                    },
+                    {
+                      "type": "fixme",
+                      "location": {
+                        "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                        "line": 95,
+                        "column": 6
+                      }
+                    },
+                    {
+                      "type": "fixme",
+                      "location": {
+                        "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                        "line": 149,
+                        "column": 6
+                      }
+                    },
+                    {
+                      "type": "fixme",
+                      "location": {
+                        "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                        "line": 151,
+                        "column": 6
+                      }
+                    },
+                    {
+                      "type": "fixme",
+                      "location": {
+                        "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                        "line": 192,
+                        "column": 6
+                      }
+                    },
+                    {
+                      "type": "fixme",
+                      "location": {
+                        "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                        "line": 194,
+                        "column": 6
+                      }
+                    },
+                    {
+                      "type": "fixme",
+                      "location": {
+                        "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                        "line": 196,
+                        "column": 6
+                      }
+                    },
+                    {
+                      "type": "fixme",
+                      "location": {
+                        "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                        "line": 198,
+                        "column": 6
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "75f030cb6bceb9195b96-ccbb37d820c0873e28c6",
+          "file": "api/trn-01.spec.ts",
+          "line": 27,
+          "column": 5
+        },
+        {
+          "title": "A13 · AC-5 · refuse the one-character name \"A\"",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "fixme",
+                  "location": {
+                    "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                    "line": 52,
+                    "column": 6
+                  }
+                },
+                {
+                  "type": "fixme",
+                  "location": {
+                    "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                    "line": 54,
+                    "column": 6
+                  }
+                },
+                {
+                  "type": "fixme",
+                  "location": {
+                    "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                    "line": 56,
+                    "column": 6
+                  }
+                },
+                {
+                  "type": "fixme",
+                  "location": {
+                    "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                    "line": 58,
+                    "column": 6
+                  }
+                },
+                {
+                  "type": "fixme",
+                  "location": {
+                    "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                    "line": 60,
+                    "column": 6
+                  }
+                },
+                {
+                  "type": "fixme",
+                  "location": {
+                    "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                    "line": 93,
+                    "column": 6
+                  }
+                },
+                {
+                  "type": "fixme",
+                  "location": {
+                    "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                    "line": 95,
+                    "column": 6
+                  }
+                },
+                {
+                  "type": "fixme",
+                  "location": {
+                    "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                    "line": 149,
+                    "column": 6
+                  }
+                },
+                {
+                  "type": "fixme",
+                  "location": {
+                    "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                    "line": 151,
+                    "column": 6
+                  }
+                },
+                {
+                  "type": "fixme",
+                  "location": {
+                    "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                    "line": 192,
+                    "column": 6
+                  }
+                },
+                {
+                  "type": "fixme",
+                  "location": {
+                    "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                    "line": 194,
+                    "column": 6
+                  }
+                },
+                {
+                  "type": "fixme",
+                  "location": {
+                    "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                    "line": 196,
+                    "column": 6
+                  }
+                },
+                {
+                  "type": "fixme",
+                  "location": {
+                    "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                    "line": 198,
+                    "column": 6
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "api",
+              "projectName": "api",
+              "results": [
+                {
+                  "workerIndex": -1,
+                  "parallelIndex": -1,
+                  "status": "skipped",
+                  "duration": 0,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T09:33:49.116Z",
+                  "annotations": [
+                    {
+                      "type": "fixme",
+                      "location": {
+                        "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                        "line": 52,
+                        "column": 6
+                      }
+                    },
+                    {
+                      "type": "fixme",
+                      "location": {
+                        "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                        "line": 54,
+                        "column": 6
+                      }
+                    },
+                    {
+                      "type": "fixme",
+                      "location": {
+                        "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                        "line": 56,
+                        "column": 6
+                      }
+                    },
+                    {
+                      "type": "fixme",
+                      "location": {
+                        "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                        "line": 58,
+                        "column": 6
+                      }
+                    },
+                    {
+                      "type": "fixme",
+                      "location": {
+                        "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                        "line": 60,
+                        "column": 6
+                      }
+                    },
+                    {
+                      "type": "fixme",
+                      "location": {
+                        "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                        "line": 93,
+                        "column": 6
+                      }
+                    },
+                    {
+                      "type": "fixme",
+                      "location": {
+                        "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                        "line": 95,
+                        "column": 6
+                      }
+                    },
+                    {
+                      "type": "fixme",
+                      "location": {
+                        "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                        "line": 149,
+                        "column": 6
+                      }
+                    },
+                    {
+                      "type": "fixme",
+                      "location": {
+                        "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                        "line": 151,
+                        "column": 6
+                      }
+                    },
+                    {
+                      "type": "fixme",
+                      "location": {
+                        "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                        "line": 192,
+                        "column": 6
+                      }
+                    },
+                    {
+                      "type": "fixme",
+                      "location": {
+                        "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                        "line": 194,
+                        "column": 6
+                      }
+                    },
+                    {
+                      "type": "fixme",
+                      "location": {
+                        "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                        "line": 196,
+                        "column": 6
+                      }
+                    },
+                    {
+                      "type": "fixme",
+                      "location": {
+                        "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                        "line": 198,
+                        "column": 6
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "75f030cb6bceb9195b96-f2654e765f16f92f7a6d",
+          "file": "api/trn-01.spec.ts",
+          "line": 107,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-05T09:33:46.500Z",
+    "duration": 2629.888,
+    "expected": 1,
+    "skipped": 2,
+    "unexpected": 0,
+    "flaky": 1
+  }
+}
