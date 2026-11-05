@@ -1,0 +1,36 @@
+{
+  "run_id": "20261105-210726",
+  "started_at": "2026-11-05T13:07:26.048Z",
+  "finished_at": "2026-11-05T13:07:41.576Z",
+  "base_url": "https://city-treasurer-staging.aiqe.pro",
+  "browsers": [
+    "chrome"
+  ],
+  "story": "Test US1",
+  "counts": {
+    "passed": 0,
+    "flaky": 0,
+    "failed": 0,
+    "blocked": 0,
+    "not_tested": 4
+  },
+  "results": [],
+  "not_tested": [
+    "A5",
+    "W2",
+    "W3",
+    "I1"
+  ],
+  "report": "Test US1 - 2026-11-05 210726.html",
+  "messages": [],
+  "pushed": false,
+  "push_message": "",
+  "folder": "test-runs/2026-11-05/Test US1 - 2026-11-05 210726",
+  "pages_url": "https://mitch-qe360.github.io/uctp-tests/2026-11-05/Test%20US1%20-%202026-11-05%20210726/Test%20US1%20-%202026-11-05%20210726.html",
+  "only": [
+    "I1",
+    "A5",
+    "W2",
+    "W3"
+  ]
+}
