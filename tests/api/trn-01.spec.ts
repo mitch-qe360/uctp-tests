@@ -7,7 +7,7 @@ const baseHeaders = {
   'Content-Type': 'application/json',
 };
 
-const unique = () => Array.from({ length: 4 }, () => 'abcdefghijklmnopqrstuvwxyz'[Math.floor(Math.random() * 26)]).join('');
+const unique = () => Math.random().toString(36).slice(2, 6);
 const mobile = () =>
   '09' + String(Date.now()).slice(-9);
 
@@ -49,15 +49,15 @@ test('A4 · AC-1 · refuse duplicate mobile', async ({ request }) => {
   });
 });
 
-test.fixme('A2 · AC-1 · ASK: required-field behavior for empty full_name', async () => {});
+test.fixme('A2 · AC-1 · ASK: required-field behavior for empty full_name');
 
-test.fixme('A3 · AC-1 · ASK: required-field behavior for empty mobile', async () => {});
+test.fixme('A3 · AC-1 · ASK: required-field behavior for empty mobile');
 
-test.fixme('A5 · AC-2 · ASK: GET status code and response schema', async () => {});
+test.fixme('A5 · AC-2 · ASK: GET status code and response schema');
 
-test.fixme('A6 · AC-2 · ASK: exact empty taxpayer-list API response', async () => {});
+test.fixme('A6 · AC-2 · ASK: exact empty taxpayer-list API response');
 
-test.fixme('A7 · AC-3 · ASK: exact stored full_name in GET response', async () => {});
+test.fixme('A7 · AC-3 · ASK: exact stored full_name in GET response');
 
 test('A8 · AC-4 · refuse mobile already registered for TAGAYTAY', async ({ request }) => {
   const data = taxpayer();
@@ -90,9 +90,9 @@ test('A9 · AC-4 · refuse a second registration using the same mobile', async (
   });
 });
 
-test.fixme('A10 · AC-4 · ASK: duplicate detection for 09 and +639 representations', async () => {});
+test.fixme('A10 · AC-4 · ASK: duplicate detection for 09 and +639 representations');
 
-test.fixme('A11 · AC-4 · ASK: exact persistence behavior after duplicate submission', async () => {});
+test.fixme('A11 · AC-4 · ASK: exact persistence behavior after duplicate submission');
 
 test('A12 · AC-5 · accept a two-character permitted name', async ({ request }) => {
   const response = await create(request, {
@@ -146,9 +146,9 @@ test('A15 · AC-5 · refuse a name containing @', async ({ request }) => {
   });
 });
 
-test.fixme('A16 · AC-6 · ASK: exact API response when optional email is omitted', async () => {});
+test.fixme('A16 · AC-6 · ASK: exact API response when optional email is omitted');
 
-test.fixme('A17 · AC-6 · ASK: acceptance of a 254-character email address', async () => {});
+test.fixme('A17 · AC-6 · ASK: acceptance of a 254-character email address');
 
 test('A18 · AC-6 · refuse email without @', async ({ request }) => {
   const response = await create(request, {
@@ -189,13 +189,13 @@ test('A20 · AC-6 · refuse a 255-character email', async ({ request }) => {
   });
 });
 
-test.fixme('A21 · AC-7 · ASK: exact GET response structure for Mitch-6973', async () => {});
+test.fixme('A21 · AC-7 · ASK: exact GET response structure for Mitch-6973');
 
-test.fixme('A22 · AC-7 · ASK: exact empty-list response for Mitch-6973-other', async () => {});
+test.fixme('A22 · AC-7 · ASK: exact empty-list response for Mitch-6973-other');
 
-test.fixme('A23 · AC-8 · ASK: exact API response for mobile 09123456789', async () => {});
+test.fixme('A23 · AC-8 · ASK: exact API response for mobile 09123456789');
 
-test.fixme('A24 · AC-8 · ASK: exact API response for mobile +639123456789', async () => {});
+test.fixme('A24 · AC-8 · ASK: exact API response for mobile +639123456789');
 
 test('A25 · AC-8 · refuse mobile beginning with 08', async ({ request }) => {
   const response = await create(request, {

@@ -1,0 +1,802 @@
+{
+ "format": "qe360-mindmap",
+ "version": 1,
+ "title": "Test US1",
+ "settings": {
+  "rollupMode": "percentage",
+  "leafOnlyRollup": true,
+  "enableStatusPropagation": true,
+  "statusDefinitions": [
+   {
+    "id": "st_notstarted",
+    "label": "Not Yet Started",
+    "color": "transparent",
+    "countsAsComplete": false,
+    "triggersFailureCascade": false
+   },
+   {
+    "id": "st_inprogress",
+    "label": "In Progress",
+    "color": "#38BDF8",
+    "countsAsComplete": false,
+    "triggersFailureCascade": false
+   },
+   {
+    "id": "st_clarify",
+    "label": "For Clarification",
+    "color": "#EAB308",
+    "countsAsComplete": false,
+    "triggersFailureCascade": false
+   },
+   {
+    "id": "st_blocked",
+    "label": "Blocked",
+    "color": "#EC4899",
+    "countsAsComplete": false,
+    "triggersFailureCascade": true
+   },
+   {
+    "id": "st_failed",
+    "label": "Failed",
+    "color": "#F87171",
+    "countsAsComplete": false,
+    "triggersFailureCascade": true
+   },
+   {
+    "id": "st_passed",
+    "label": "Passed",
+    "color": "#10B981",
+    "countsAsComplete": true,
+    "triggersFailureCascade": false
+   }
+  ],
+  "severityOrder": [
+   "st_failed",
+   "st_blocked",
+   "st_clarify",
+   "st_inprogress",
+   "st_passed",
+   "st_notstarted"
+  ]
+ },
+ "root": {
+  "id": "n1",
+  "text": "Test US1",
+  "note": "",
+  "collapsed": false,
+  "statusId": null,
+  "highlight": null,
+  "children": [
+   {
+    "id": "n2",
+    "text": "UCTP",
+    "note": "",
+    "collapsed": false,
+    "statusId": null,
+    "highlight": null,
+    "children": [
+     {
+      "id": "n3",
+      "text": "TRN-01 · Register a taxpayer",
+      "note": "",
+      "collapsed": false,
+      "statusId": null,
+      "highlight": null,
+      "children": [
+       {
+        "id": "n4",
+        "text": "AC-1 Section \"1 — Create a taxpayer\" shows \"[full name] created — mobile [mobile].\"",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": [
+         {
+          "id": "n5",
+          "text": "Upon page load: ASK: Exact initial state of the result box?",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "n6",
+          "text": "Functional validations: POST /api/v1/training/taxpayers returns 201 with taxpayer_id.",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "n7",
+          "text": "Steps: 1. Enter \"Ana <random> Dela Cruz\" and a unique PH mobile. 2. Click \"Create taxpayer\".",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "n8",
+          "text": "A1 · Function + : POST with a unique full name and mobile -> HTTP 201 with taxpayer_id",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "n9",
+          "text": "W1 · Function + : Create taxpayer with the entered name and mobile -> result box shows \"[trimmed full name] created — mobile [mobile].\"",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "na",
+          "text": "A2 · General - : ASK: Required-field behavior and exact response for an empty full name?",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "nb",
+          "text": "A3 · General - : ASK: Required-field behavior and exact response for an empty mobile?",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "nc",
+          "text": "A4 · Function - : Submit a duplicate mobile -> HTTP 409, detail.mobile \"already registered for this tenant\"",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         }
+        ]
+       },
+       {
+        "id": "nd",
+        "text": "AC-2 The same taxpayer details show under My data › My taxpayers.",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": [
+         {
+          "id": "ne",
+          "text": "Functional validations: GET /api/v1/training/taxpayers lists my taxpayers.",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "nf",
+          "text": "Steps: 1. Create a taxpayer. 2. Open My data › My taxpayers.",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "ng",
+          "text": "A5 · Store + : GET taxpayers after creation -> ASK: Exact response body structure and status code?",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "nh",
+          "text": "W2 · Store + : Open My data › My taxpayers after creation -> the created taxpayer's name and mobile appear",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "ni",
+          "text": "A6 · Store - : ASK: Exact API response when the taxpayer list is empty?",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "nj",
+          "text": "W3 · Navigation - : Open My taxpayers before creating a taxpayer -> ASK: Exact empty-list screen state?",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "nk",
+          "text": "I1 · Store - : Compare the created taxpayer with the list entry -> ASK: Exact API fields and screen values to compare?",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         }
+        ]
+       },
+       {
+        "id": "nl",
+        "text": "AC-3 Spaces around the name are removed, both in the \"created\" message and in My data.",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": [
+         {
+          "id": "nm",
+          "text": "Functional validations: Leading and trailing spaces are removed from full_name.",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "nn",
+          "text": "Steps: 1. Enter a name with leading and trailing spaces. 2. Create taxpayer. 3. Open My taxpayers.",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "no",
+          "text": "W4 · General + : Enter \"  Ana <random> Dela Cruz  \" -> created message and My taxpayers show \"Ana <random> Dela Cruz\" without surrounding spaces",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "np",
+          "text": "A7 · General + : POST a full_name with surrounding spaces -> ASK: Exact stored full_name in GET response?",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "nq",
+          "text": "W5 · Inputs - : Paste a name with internal repeated spaces -> ASK: Whether internal spaces are collapsed or preserved?",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "nr",
+          "text": "W6 · Store - : Reload My taxpayers after creation -> ASK: Exact persistence behavior and displayed name?",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "ns",
+          "text": "I2 · Store - : Compare POST input, creation message and GET result -> ASK: Exact API field containing the trimmed name?",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         }
+        ]
+       },
+       {
+        "id": "nt",
+        "text": "AC-4 A mobile that's already registered is not accepted.",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": [
+         {
+          "id": "nu",
+          "text": "Functional validations: A mobile already registered for the TAGAYTAY tenant is refused.",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "nv",
+          "text": "Steps: 1. Create a taxpayer. 2. Submit another taxpayer using the same mobile.",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "nw",
+          "text": "A8 · Domain/Data + : POST a second taxpayer with the previously registered mobile -> HTTP 409, detail.mobile \"already registered for this tenant\"",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "nx",
+          "text": "A9 · Domain/Data - : POST a mobile registered to another taxpayer in TAGAYTAY -> HTTP 409, detail.mobile \"already registered for this tenant\"",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "ny",
+          "text": "A10 · Domain/Data - : ASK: Does duplicate detection normalize 09 and +639 representations of the same mobile?",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "nz",
+          "text": "A11 · Store - : Retry the duplicate request -> ASK: Whether the original taxpayer remains unchanged and the second taxpayer remains absent?",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "n10",
+          "text": "W7 · Function - : Submit a previously registered mobile -> ASK: Exact screen presentation of \"already registered for this tenant\"?",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         }
+        ]
+       },
+       {
+        "id": "n11",
+        "text": "AC-5 Name accepts only 2–100 characters: letters, spaces, . - ' and Ñ. Message: \"2-100 characters: letters, spaces, . - ' and Ñ only\"",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": [
+         {
+          "id": "n12",
+          "text": "Element validations: Full name - 2–100 characters; permitted characters are letters, spaces, period, hyphen, apostrophe and Ñ.",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "n13",
+          "text": "Steps: 1. Enter a name. 2. Submit the form.",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "n14",
+          "text": "A12 · Domain/Data + : POST a 2-character permitted name -> HTTP 201 with taxpayer_id",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "n15",
+          "text": "A13 · Numbers - : POST a 1-character name -> HTTP 422, detail.full_name \"2-100 characters: letters, spaces, . - ' and Ñ only\"",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "n16",
+          "text": "A14 · Numbers - : POST a 101-character name -> HTTP 422, detail.full_name \"2-100 characters: letters, spaces, . - ' and Ñ only\"",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "n17",
+          "text": "A15 · Syntax - : POST a name containing an unlisted character such as @ -> HTTP 422, detail.full_name \"2-100 characters: letters, spaces, . - ' and Ñ only\"",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "n18",
+          "text": "W8 · Syntax - : Type a name containing @ -> ASK: Exact form behavior before submission and result-box behavior after submission?",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         }
+        ]
+       },
+       {
+        "id": "n19",
+        "text": "AC-6 Email is optional. If typed, it needs one @ with a dot after it, 254 characters max. Message: \"invalid email format\"",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": [
+         {
+          "id": "n1a",
+          "text": "Element validations: Email - optional; one @, a dot after @, maximum 254 characters.",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "n1b",
+          "text": "Steps: 1. Leave email empty or enter an email. 2. Submit the form.",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "n1c",
+          "text": "A16 · Syntax + : POST with email omitted -> ASK: Exact API response and whether email is stored as null or omitted?",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "n1d",
+          "text": "A17 · Numbers + : POST an email of exactly 254 characters with the required format -> ASK: Whether HTTP 201 is returned?",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "n1e",
+          "text": "A18 · Syntax - : POST an email with no @ -> HTTP 422, detail.email \"invalid email format\"",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "n1f",
+          "text": "A19 · Syntax - : POST an email with two @ characters -> HTTP 422, detail.email \"invalid email format\"",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "n1g",
+          "text": "A20 · Numbers - : POST an email of 255 characters -> HTTP 422, detail.email \"invalid email format\"",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "n1h",
+          "text": "W9 · Syntax - : Enter an email with no dot after @ -> ASK: Exact screen behavior and timing of the message?",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         }
+        ]
+       },
+       {
+        "id": "n1i",
+        "text": "AC-7 A taxpayer created under my name-tag shows only for that name-tag. Under another name-tag, My data shows \"None yet — create one in Training setup.\" and the Taxpayer lists are empty.",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": [
+         {
+          "id": "n1j",
+          "text": "Element validations: Your name - initial name-tag Mitch-6973; alternate name-tag Mitch-6973-other.",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "n1k",
+          "text": "Steps: 1. Save Mitch-6973 in the Your name box. 2. Create a taxpayer. 3. Use top bar › Change. 4. Switch to Mitch-6973-other. 5. Open My data and taxpayer lists.",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "n1l",
+          "text": "A21 · User + : GET taxpayers with X-User-ID: Mitch-6973 -> ASK: Exact response structure containing the created taxpayer?",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "n1m",
+          "text": "A22 · User - : GET taxpayers with X-User-ID: Mitch-6973-other -> ASK: Exact empty-list API response and status code?",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "n1n",
+          "text": "W10 · User + : Open My taxpayers as Mitch-6973 -> the created taxpayer appears",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "n1o",
+          "text": "W11 · User - : Switch to Mitch-6973-other and open My data -> \"None yet — create one in Training setup.\"",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "n1p",
+          "text": "W12 · User - : Switch to Mitch-6973-other and open Taxpayer lists -> all taxpayer lists are empty",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "n1q",
+          "text": "I3 · User - : Compare the other name-tag's GET response and screen -> ASK: Exact API response schema for confirming tenant/user isolation?",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         }
+        ]
+       },
+       {
+        "id": "n1r",
+        "text": "AC-8 Mobile accepts only 09 + 9 digits, or +639 + 9 digits. No spaces, no dashes. Message: \"must be a PH mobile 09XXXXXXXXX or +639XXXXXXXXX\"",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": [
+         {
+          "id": "n1s",
+          "text": "Element validations: Mobile - exactly 11 digits beginning 09, or +639 followed by 9 digits; no spaces or dashes.",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "n1t",
+          "text": "Steps: 1. Enter a mobile. 2. Submit the form.",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "n1u",
+          "text": "A23 · Syntax + : POST mobile 09123456789 -> ASK: Exact HTTP response code and response body for an accepted mobile?",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "n1v",
+          "text": "A24 · Syntax + : POST mobile +639123456789 -> ASK: Exact HTTP response code and response body for an accepted mobile?",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "n1w",
+          "text": "A25 · Syntax - : POST mobile 08123456789 -> HTTP 422, detail.mobile \"must be a PH mobile 09XXXXXXXXX or +639XXXXXXXXX\"",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "n1x",
+          "text": "A26 · Syntax - : POST mobile 0912345678 (10 digits) -> HTTP 422, detail.mobile \"must be a PH mobile 09XXXXXXXXX or +639XXXXXXXXX\"",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "n1y",
+          "text": "A27 · Syntax - : POST mobile 091234567890 (12 digits) -> HTTP 422, detail.mobile \"must be a PH mobile 09XXXXXXXXX or +639XXXXXXXXX\"",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "n1z",
+          "text": "A28 · General - : POST mobile 09123 456789 -> HTTP 422, detail.mobile \"must be a PH mobile 09XXXXXXXXX or +639XXXXXXXXX\"",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "n20",
+          "text": "A29 · General - : POST mobile 09123-456789 -> HTTP 422, detail.mobile \"must be a PH mobile 09XXXXXXXXX or +639XXXXXXXXX\"",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         },
+         {
+          "id": "n21",
+          "text": "W13 · Syntax - : Enter a mobile containing letters -> ASK: Exact form behavior and message timing?",
+          "note": "",
+          "collapsed": false,
+          "statusId": null,
+          "highlight": null,
+          "children": []
+         }
+        ]
+       },
+       {
+        "id": "n22",
+        "text": "Coverage AC-1: 1 positive, 3 negative",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n23",
+        "text": "Coverage AC-2: 1 positive, 3 negative",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n24",
+        "text": "Coverage AC-3: 1 positive, 3 negative",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n25",
+        "text": "Coverage AC-4: 1 positive, 3 negative",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n26",
+        "text": "Coverage AC-5: 1 positive, 3 negative",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n27",
+        "text": "Coverage AC-6: 2 positive, 3 negative",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n28",
+        "text": "Coverage AC-7: 1 positive, 3 negative",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n29",
+        "text": "Coverage AC-8: 2 positive, 6 negative",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

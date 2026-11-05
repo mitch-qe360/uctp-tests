@@ -1,0 +1,274 @@
+{
+  "config": {
+    "argv": [
+      "/usr/local/bin/node",
+      "/Users/michellechua/uctp-tests/node_modules/@playwright/test/cli.js",
+      "test",
+      "tests/web",
+      "tests/integration",
+      "--project=chrome",
+      "--workers=1",
+      "--retries=3",
+      "--pass-with-no-tests",
+      "--grep",
+      "(?:^|\\s)(A4|A1|W1|A2|A3) ·",
+      "--headed"
+    ],
+    "configFile": "/Users/michellechua/uctp-tests/playwright.config.ts",
+    "rootDir": "/Users/michellechua/uctp-tests/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/michellechua/uctp-tests/test-runs/2026-11-05/Test US1 - 2026-11-05 180631/artifacts/chrome",
+        "repeatEach": 1,
+        "retries": 3,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "api",
+        "name": "api",
+        "testDir": "/Users/michellechua/uctp-tests/tests/api",
+        "testIgnore": [],
+        "testMatch": [
+          "/.*\\.spec\\.(ts|js|mjs)$/"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/michellechua/uctp-tests/test-runs/2026-11-05/Test US1 - 2026-11-05 180631/artifacts/chrome",
+        "repeatEach": 1,
+        "retries": 3,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chrome",
+        "name": "chrome",
+        "testDir": "/Users/michellechua/uctp-tests/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/(web|integration)[\\\\/].*\\.spec\\.(ts|js|mjs)$/"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/michellechua/uctp-tests/test-runs/2026-11-05/Test US1 - 2026-11-05 180631/artifacts/chrome",
+        "repeatEach": 1,
+        "retries": 3,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/michellechua/uctp-tests/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/(web|integration)[\\\\/].*\\.spec\\.(ts|js|mjs)$/"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/Users/michellechua/uctp-tests/test-runs/2026-11-05/Test US1 - 2026-11-05 180631/raw/chrome.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "web/trn-01.spec.ts",
+      "file": "web/trn-01.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "W1 · AC-1 · show created message for a unique taxpayer",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "fixme",
+                  "location": {
+                    "file": "/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts",
+                    "line": 45,
+                    "column": 6
+                  }
+                },
+                {
+                  "type": "fixme",
+                  "location": {
+                    "file": "/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts",
+                    "line": 47,
+                    "column": 6
+                  }
+                },
+                {
+                  "type": "fixme",
+                  "location": {
+                    "file": "/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts",
+                    "line": 49,
+                    "column": 6
+                  }
+                },
+                {
+                  "type": "fixme",
+                  "location": {
+                    "file": "/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts",
+                    "line": 51,
+                    "column": 6
+                  }
+                },
+                {
+                  "type": "fixme",
+                  "location": {
+                    "file": "/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts",
+                    "line": 66,
+                    "column": 6
+                  }
+                },
+                {
+                  "type": "fixme",
+                  "location": {
+                    "file": "/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts",
+                    "line": 68,
+                    "column": 6
+                  }
+                },
+                {
+                  "type": "fixme",
+                  "location": {
+                    "file": "/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts",
+                    "line": 124,
+                    "column": 6
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "chrome",
+              "projectName": "chrome",
+              "results": [
+                {
+                  "workerIndex": -1,
+                  "parallelIndex": -1,
+                  "status": "skipped",
+                  "duration": 0,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T10:06:33.470Z",
+                  "annotations": [
+                    {
+                      "type": "fixme",
+                      "location": {
+                        "file": "/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts",
+                        "line": 45,
+                        "column": 6
+                      }
+                    },
+                    {
+                      "type": "fixme",
+                      "location": {
+                        "file": "/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts",
+                        "line": 47,
+                        "column": 6
+                      }
+                    },
+                    {
+                      "type": "fixme",
+                      "location": {
+                        "file": "/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts",
+                        "line": 49,
+                        "column": 6
+                      }
+                    },
+                    {
+                      "type": "fixme",
+                      "location": {
+                        "file": "/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts",
+                        "line": 51,
+                        "column": 6
+                      }
+                    },
+                    {
+                      "type": "fixme",
+                      "location": {
+                        "file": "/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts",
+                        "line": 66,
+                        "column": 6
+                      }
+                    },
+                    {
+                      "type": "fixme",
+                      "location": {
+                        "file": "/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts",
+                        "line": 68,
+                        "column": 6
+                      }
+                    },
+                    {
+                      "type": "fixme",
+                      "location": {
+                        "file": "/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts",
+                        "line": 124,
+                        "column": 6
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "55ceaf0a9589a0d92f22-e1cb6f5dba578b5a774d",
+          "file": "web/trn-01.spec.ts",
+          "line": 28,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-05T10:06:33.457Z",
+    "duration": 13.737000000000023,
+    "expected": 0,
+    "skipped": 1,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

@@ -1,12 +1,18 @@
 // file: tests/web/trn-01.spec.ts
-import { test, expect, signIn } from '../../helpers/web';
+import { test, expect } from '@playwright/test';
 
-const unique = () => Array.from({ length: 4 }, () => 'abcdefghijklmnopqrstuvwxyz'[Math.floor(Math.random() * 26)]).join('');
+const unique = () => Math.random().toString(36).slice(2, 6);
 const mobile = () => '09' + String(Date.now()).slice(-9);
 const name = () => `Ana ${unique()} Dela Cruz`;
 
 async function setup(page: any, nameTag = 'Mitch-6973') {
-  await signIn(page, nameTag);
+  await page.goto('/');
+
+  const nameBox = page.getByText('Your name');
+  await expect(nameBox).toBeVisible();
+
+  await page.getByRole('textbox').first().fill(nameTag);
+  await page.getByRole('button', { name: 'Save' }).click();
 }
 
 async function openCreate(page: any) {
@@ -36,13 +42,13 @@ test('W1 · AC-1 · show created message for a unique taxpayer', async ({ page }
   )).toBeVisible();
 });
 
-test.fixme('W3 · AC-2 · ASK: exact empty-list screen state before taxpayer creation', async () => {});
+test.fixme('W3 · AC-2 · ASK: exact empty-list screen state before taxpayer creation');
 
-test.fixme('W4 · AC-3 · ASK: whether internal repeated spaces are preserved', async () => {});
+test.fixme('W4 · AC-3 · ASK: whether internal repeated spaces are preserved');
 
-test.fixme('W5 · AC-3 · ASK: exact name persistence after page reload', async () => {});
+test.fixme('W5 · AC-3 · ASK: exact name persistence after page reload');
 
-test.fixme('W6 · AC-4 · ASK: exact screen presentation for duplicate mobile', async () => {});
+test.fixme('W6 · AC-4 · ASK: exact screen presentation for duplicate mobile');
 
 test('W7 · AC-5 · refuse a one-character name', async ({ page }) => {
   await setup(page);
@@ -57,9 +63,9 @@ test('W7 · AC-5 · refuse a one-character name', async ({ page }) => {
   )).toBeVisible();
 });
 
-test.fixme('W8 · AC-5 · ASK: exact form behavior for a name containing @', async () => {});
+test.fixme('W8 · AC-5 · ASK: exact form behavior for a name containing @');
 
-test.fixme('W9 · AC-6 · ASK: exact screen behavior for an email without a dot after @', async () => {});
+test.fixme('W9 · AC-6 · ASK: exact screen behavior for an email without a dot after @');
 
 test('W10 · AC-7 · show taxpayer under Mitch-6973', async ({ page }) => {
   const fullName = name();
@@ -115,4 +121,4 @@ test('W12 · AC-7 · show empty taxpayer lists under Mitch-6973-other', async ({
   await expect(page.getByText('None yet — create one in Training setup.')).toBeVisible();
 });
 
-test.fixme('W13 · AC-8 · ASK: exact form behavior and message timing for mobile containing letters', async () => {});
+test.fixme('W13 · AC-8 · ASK: exact form behavior and message timing for mobile containing letters');
