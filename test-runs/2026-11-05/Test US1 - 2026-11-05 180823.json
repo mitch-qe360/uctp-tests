@@ -1,0 +1,67 @@
+{
+  "run_id": "20261105-180823",
+  "started_at": "2026-11-05T10:08:23.826Z",
+  "finished_at": "2026-11-05T10:08:26.260Z",
+  "base_url": "https://city-treasurer-staging.aiqe.pro",
+  "browsers": [
+    "chrome"
+  ],
+  "story": "Test US1",
+  "counts": {
+    "passed": 0,
+    "flaky": 0,
+    "failed": 0,
+    "blocked": 4,
+    "not_tested": 1
+  },
+  "results": [
+    {
+      "id": "A5",
+      "title": "A5 · AC-2 · ASK: GET status code and response schema",
+      "browser": "api",
+      "status": "blocked",
+      "error": "Did not run (skipped or stopped)",
+      "screenshot": null
+    },
+    {
+      "id": "A6",
+      "title": "A6 · AC-2 · ASK: exact empty taxpayer-list API response",
+      "browser": "api",
+      "status": "blocked",
+      "error": "Did not run (skipped or stopped)",
+      "screenshot": null
+    },
+    {
+      "id": "I1",
+      "title": "I1 · AC-2 · ASK: compare created taxpayer with GET response using exact response schema and status code",
+      "browser": "chrome",
+      "status": "blocked",
+      "error": "Did not run (skipped or stopped)",
+      "screenshot": null
+    },
+    {
+      "id": "W3",
+      "title": "W3 · AC-2 · ASK: exact empty-list screen state before taxpayer creation",
+      "browser": "chrome",
+      "status": "blocked",
+      "error": "Did not run (skipped or stopped)",
+      "screenshot": null
+    }
+  ],
+  "not_tested": [
+    "W2"
+  ],
+  "report": "Test US1 - 2026-11-05 180823.html",
+  "messages": [],
+  "pushed": false,
+  "push_message": "",
+  "folder": "test-runs/2026-11-05",
+  "pages_url": "https://mitch-qe360.github.io/uctp-tests/2026-11-05/Test%20US1%20-%202026-11-05%20180823.html",
+  "only": [
+    "I1",
+    "A5",
+    "W2",
+    "A6",
+    "W3"
+  ]
+}

@@ -48,6 +48,13 @@
     "color": "#10B981",
     "countsAsComplete": true,
     "triggersFailureCascade": false
+   },
+   {
+    "id": "st_flaky",
+    "label": "Flaky",
+    "color": "#F59E0B",
+    "countsAsComplete": false,
+    "triggersFailureCascade": false
    }
   ],
   "severityOrder": [
@@ -55,6 +62,7 @@
    "st_blocked",
    "st_clarify",
    "st_inprogress",
+   "st_flaky",
    "st_passed",
    "st_notstarted"
   ]
@@ -121,18 +129,18 @@
          {
           "id": "n8",
           "text": "A1 · Function + : POST with a unique full name and mobile -> HTTP 201 with taxpayer_id",
-          "note": "",
+          "note": "api: blocked - Did not run (skipped or stopped)",
           "collapsed": false,
-          "statusId": null,
+          "statusId": "st_blocked",
           "highlight": null,
           "children": []
          },
          {
           "id": "n9",
           "text": "W1 · Function + : Create taxpayer with the entered name and mobile -> result box shows \"[trimmed full name] created — mobile [mobile].\"",
-          "note": "",
+          "note": "chrome: blocked - Did not run (skipped or stopped)",
           "collapsed": false,
-          "statusId": null,
+          "statusId": "st_blocked",
           "highlight": null,
           "children": []
          },
@@ -157,9 +165,9 @@
          {
           "id": "nc",
           "text": "A4 · Function - : Submit a duplicate mobile -> HTTP 409, detail.mobile \"already registered for this tenant\"",
-          "note": "",
+          "note": "api: blocked - Did not run (skipped or stopped)",
           "collapsed": false,
-          "statusId": null,
+          "statusId": "st_blocked",
           "highlight": null,
           "children": []
          }
@@ -796,6 +804,15 @@
       ]
      }
     ]
+   },
+   {
+    "id": "n2a",
+    "text": "Test run 2026-11-05 10:06: 0 passed, 0 flaky, 0 failed, 3 blocked, 2 not tested",
+    "note": "Browsers: chrome\nBase URL: https://city-treasurer-staging.aiqe.pro\nReport: test-runs/20261105-180631/index.html",
+    "collapsed": false,
+    "statusId": null,
+    "highlight": null,
+    "children": []
    }
   ]
  }
