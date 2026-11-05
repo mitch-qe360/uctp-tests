@@ -46,8 +46,8 @@
   ],
   "report": "Test US1 - 2026-11-05 180631.html",
   "messages": [],
-  "pushed": false,
-  "push_message": "",
+  "pushed": true,
+  "push_message": "Pushed. CI runs on GitHub too.",
   "folder": "test-runs/2026-11-05",
   "pages_url": "https://mitch-qe360.github.io/uctp-tests/2026-11-05/Test%20US1%20-%202026-11-05%20180631.html",
   "only": [

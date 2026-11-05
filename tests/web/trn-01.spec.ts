@@ -1,5 +1,5 @@
 // file: tests/web/trn-01.spec.ts
-import { test, expect } from '@playwright/test';
+import { test, expect, signIn } from '../../helpers/web';
 
 const unique = () => Math.random().toString(36).slice(2, 6);
 const mobile = () => '09' + String(Date.now()).slice(-9);
@@ -42,13 +42,13 @@ test('W1 · AC-1 · show created message for a unique taxpayer', async ({ page }
   )).toBeVisible();
 });
 
-test.fixme('W3 · AC-2 · ASK: exact empty-list screen state before taxpayer creation');
+test.fixme('W3 · AC-2 · ASK: exact empty-list screen state before taxpayer creation', async () => {});
 
-test.fixme('W4 · AC-3 · ASK: whether internal repeated spaces are preserved');
+test.fixme('W4 · AC-3 · ASK: whether internal repeated spaces are preserved', async () => {});
 
-test.fixme('W5 · AC-3 · ASK: exact name persistence after page reload');
+test.fixme('W5 · AC-3 · ASK: exact name persistence after page reload', async () => {});
 
-test.fixme('W6 · AC-4 · ASK: exact screen presentation for duplicate mobile');
+test.fixme('W6 · AC-4 · ASK: exact screen presentation for duplicate mobile', async () => {});
 
 test('W7 · AC-5 · refuse a one-character name', async ({ page }) => {
   await setup(page);
@@ -63,9 +63,9 @@ test('W7 · AC-5 · refuse a one-character name', async ({ page }) => {
   )).toBeVisible();
 });
 
-test.fixme('W8 · AC-5 · ASK: exact form behavior for a name containing @');
+test.fixme('W8 · AC-5 · ASK: exact form behavior for a name containing @', async () => {});
 
-test.fixme('W9 · AC-6 · ASK: exact screen behavior for an email without a dot after @');
+test.fixme('W9 · AC-6 · ASK: exact screen behavior for an email without a dot after @', async () => {});
 
 test('W10 · AC-7 · show taxpayer under Mitch-6973', async ({ page }) => {
   const fullName = name();
@@ -121,4 +121,4 @@ test('W12 · AC-7 · show empty taxpayer lists under Mitch-6973-other', async ({
   await expect(page.getByText('None yet — create one in Training setup.')).toBeVisible();
 });
 
-test.fixme('W13 · AC-8 · ASK: exact form behavior and message timing for mobile containing letters');
+test.fixme('W13 · AC-8 · ASK: exact form behavior and message timing for mobile containing letters', async () => {});
