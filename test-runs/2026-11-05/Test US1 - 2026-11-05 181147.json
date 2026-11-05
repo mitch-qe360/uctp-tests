@@ -1,0 +1,55 @@
+{
+  "run_id": "20261105-181147",
+  "started_at": "2026-11-05T10:11:47.939Z",
+  "finished_at": "2026-11-05T10:11:56.060Z",
+  "base_url": "https://city-treasurer-staging.aiqe.pro",
+  "browsers": [
+    "chrome"
+  ],
+  "story": "Test US1",
+  "counts": {
+    "passed": 2,
+    "flaky": 0,
+    "failed": 0,
+    "blocked": 1,
+    "not_tested": 0
+  },
+  "results": [
+    {
+      "id": "A1",
+      "title": "A1 · AC-1 · create taxpayer with unique name and mobile",
+      "browser": "api",
+      "status": "passed",
+      "error": null,
+      "screenshot": null
+    },
+    {
+      "id": "A4",
+      "title": "A4 · AC-1 · refuse duplicate mobile",
+      "browser": "api",
+      "status": "passed",
+      "error": null,
+      "screenshot": null
+    },
+    {
+      "id": "W1",
+      "title": "W1 · AC-1 · show created message for a unique taxpayer",
+      "browser": "chrome",
+      "status": "blocked",
+      "error": "Error: locator.click: Error: strict mode violation: getByText('Training setup') resolved to 2 elements:\n    1) <a class=\"\" href=\"/training\" data-nav=\"training\">Training setup</a> aka getByRole('link', { name: 'Training setup' })\n    2) <h2>Training setup</h2> aka getByRole('heading', { name: 'Training setup' })\n\nCall log:\n  - waiting for getByText('Training setup')",
+      "screenshot": "Test US1 - 2026-11-05 181147/artifacts/chrome/web-trn-01-W1-·-AC-1-·-sho-5b4c3-ssage-for-a-unique-taxpayer-chrome-retry3/attachments/screenshot-b6a4103d7e5a53d4b1e1dee47f00a3aea168b98f.png"
+    }
+  ],
+  "not_tested": [],
+  "report": "Test US1 - 2026-11-05 181147.html",
+  "messages": [],
+  "pushed": false,
+  "push_message": "",
+  "folder": "test-runs/2026-11-05",
+  "pages_url": "https://mitch-qe360.github.io/uctp-tests/2026-11-05/Test%20US1%20-%202026-11-05%20181147.html",
+  "only": [
+    "W1",
+    "A1",
+    "A4"
+  ]
+}

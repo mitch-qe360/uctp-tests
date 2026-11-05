@@ -202,9 +202,9 @@
          {
           "id": "ng",
           "text": "A5 · Store + : GET taxpayers after creation -> ASK: Exact response body structure and status code?",
-          "note": "",
+          "note": "api: blocked - Did not run (skipped or stopped)",
           "collapsed": false,
-          "statusId": null,
+          "statusId": "st_blocked",
           "highlight": null,
           "children": []
          },
@@ -220,27 +220,27 @@
          {
           "id": "ni",
           "text": "A6 · Store - : ASK: Exact API response when the taxpayer list is empty?",
-          "note": "",
+          "note": "api: blocked - Did not run (skipped or stopped)",
           "collapsed": false,
-          "statusId": null,
+          "statusId": "st_blocked",
           "highlight": null,
           "children": []
          },
          {
           "id": "nj",
           "text": "W3 · Navigation - : Open My taxpayers before creating a taxpayer -> ASK: Exact empty-list screen state?",
-          "note": "",
+          "note": "chrome: blocked - Did not run (skipped or stopped)",
           "collapsed": false,
-          "statusId": null,
+          "statusId": "st_blocked",
           "highlight": null,
           "children": []
          },
          {
           "id": "nk",
           "text": "I1 · Store - : Compare the created taxpayer with the list entry -> ASK: Exact API fields and screen values to compare?",
-          "note": "",
+          "note": "chrome: blocked - Did not run (skipped or stopped)",
           "collapsed": false,
-          "statusId": null,
+          "statusId": "st_blocked",
           "highlight": null,
           "children": []
          }
@@ -809,6 +809,15 @@
     "id": "n2a",
     "text": "Test run 2026-11-05 10:06: 0 passed, 0 flaky, 0 failed, 3 blocked, 2 not tested",
     "note": "Browsers: chrome\nBase URL: https://city-treasurer-staging.aiqe.pro\nReport: test-runs/20261105-180631/index.html",
+    "collapsed": false,
+    "statusId": null,
+    "highlight": null,
+    "children": []
+   },
+   {
+    "id": "n2b",
+    "text": "Test run 2026-11-05 10:08: 0 passed, 0 flaky, 0 failed, 4 blocked, 1 not tested",
+    "note": "Browsers: chrome\nBase URL: https://city-treasurer-staging.aiqe.pro\nReport: test-runs/20261105-180823/index.html",
     "collapsed": false,
     "statusId": null,
     "highlight": null,

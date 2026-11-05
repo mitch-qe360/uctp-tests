@@ -1,0 +1,339 @@
+{
+  "config": {
+    "argv": [
+      "/usr/local/bin/node",
+      "/Users/michellechua/uctp-tests/node_modules/@playwright/test/cli.js",
+      "test",
+      "tests/web",
+      "tests/integration",
+      "--project=chrome",
+      "--workers=1",
+      "--retries=3",
+      "--pass-with-no-tests",
+      "--grep",
+      "(?:^|\\s)(W1|A1|A4) ·",
+      "--headed"
+    ],
+    "configFile": "/Users/michellechua/uctp-tests/playwright.config.ts",
+    "rootDir": "/Users/michellechua/uctp-tests/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/michellechua/uctp-tests/test-runs/2026-11-05/Test US1 - 2026-11-05 181147/artifacts/chrome",
+        "repeatEach": 1,
+        "retries": 3,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "api",
+        "name": "api",
+        "testDir": "/Users/michellechua/uctp-tests/tests/api",
+        "testIgnore": [],
+        "testMatch": [
+          "/.*\\.spec\\.(ts|js|mjs)$/"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/michellechua/uctp-tests/test-runs/2026-11-05/Test US1 - 2026-11-05 181147/artifacts/chrome",
+        "repeatEach": 1,
+        "retries": 3,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chrome",
+        "name": "chrome",
+        "testDir": "/Users/michellechua/uctp-tests/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/(web|integration)[\\\\/].*\\.spec\\.(ts|js|mjs)$/"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/michellechua/uctp-tests/test-runs/2026-11-05/Test US1 - 2026-11-05 181147/artifacts/chrome",
+        "repeatEach": 1,
+        "retries": 3,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/michellechua/uctp-tests/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/(web|integration)[\\\\/].*\\.spec\\.(ts|js|mjs)$/"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/Users/michellechua/uctp-tests/test-runs/2026-11-05/Test US1 - 2026-11-05 181147/raw/chrome.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "web/trn-01.spec.ts",
+      "file": "web/trn-01.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "W1 · AC-1 · show created message for a unique taxpayer",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chrome",
+              "projectName": "chrome",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 988,
+                  "error": {
+                    "message": "Error: locator.click: Error: strict mode violation: getByText('Training setup') resolved to 2 elements:\n    1) <a class=\"\" href=\"/training\" data-nav=\"training\">Training setup</a> aka getByRole('link', { name: 'Training setup' })\n    2) <h2>Training setup</h2> aka getByRole('heading', { name: 'Training setup' })\n\nCall log:\n\u001b[2m  - waiting for getByText('Training setup')\u001b[22m\n",
+                    "stack": "Error: locator.click: Error: strict mode violation: getByText('Training setup') resolved to 2 elements:\n    1) <a class=\"\" href=\"/training\" data-nav=\"training\">Training setup</a> aka getByRole('link', { name: 'Training setup' })\n    2) <h2>Training setup</h2> aka getByRole('heading', { name: 'Training setup' })\n\nCall log:\n\u001b[2m  - waiting for getByText('Training setup')\u001b[22m\n\n    at openCreate (/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts:13:42)\n    at /Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts:27:9",
+                    "location": {
+                      "file": "/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts",
+                      "column": 42,
+                      "line": 13
+                    },
+                    "snippet": "  11 |\n  12 | async function openCreate(page: any) {\n> 13 |   await page.getByText('Training setup').click();\n     |                                          ^\n  14 |   await page.getByText('Create my data').click();\n  15 | }\n  16 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts",
+                        "column": 42,
+                        "line": 13
+                      },
+                      "message": "Error: locator.click: Error: strict mode violation: getByText('Training setup') resolved to 2 elements:\n    1) <a class=\"\" href=\"/training\" data-nav=\"training\">Training setup</a> aka getByRole('link', { name: 'Training setup' })\n    2) <h2>Training setup</h2> aka getByRole('heading', { name: 'Training setup' })\n\nCall log:\n\u001b[2m  - waiting for getByText('Training setup')\u001b[22m\n\n\n  11 |\n  12 | async function openCreate(page: any) {\n> 13 |   await page.getByText('Training setup').click();\n     |                                          ^\n  14 |   await page.getByText('Create my data').click();\n  15 | }\n  16 |\n    at openCreate (/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts:13:42)\n    at /Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts:27:9"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T10:11:51.261Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/michellechua/uctp-tests/test-runs/2026-11-05/Test US1 - 2026-11-05 181147/artifacts/chrome/web-trn-01-W1-·-AC-1-·-sho-5b4c3-ssage-for-a-unique-taxpayer-chrome/attachments/screenshot-f303eaf289b62e49f2640f0c5b2373193de0c183.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/michellechua/uctp-tests/test-runs/2026-11-05/Test US1 - 2026-11-05 181147/artifacts/chrome/web-trn-01-W1-·-AC-1-·-sho-5b4c3-ssage-for-a-unique-taxpayer-chrome/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts",
+                    "column": 42,
+                    "line": 13
+                  }
+                },
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 531,
+                  "error": {
+                    "message": "Error: locator.click: Error: strict mode violation: getByText('Training setup') resolved to 2 elements:\n    1) <a class=\"\" href=\"/training\" data-nav=\"training\">Training setup</a> aka getByRole('link', { name: 'Training setup' })\n    2) <h2>Training setup</h2> aka getByRole('heading', { name: 'Training setup' })\n\nCall log:\n\u001b[2m  - waiting for getByText('Training setup')\u001b[22m\n",
+                    "stack": "Error: locator.click: Error: strict mode violation: getByText('Training setup') resolved to 2 elements:\n    1) <a class=\"\" href=\"/training\" data-nav=\"training\">Training setup</a> aka getByRole('link', { name: 'Training setup' })\n    2) <h2>Training setup</h2> aka getByRole('heading', { name: 'Training setup' })\n\nCall log:\n\u001b[2m  - waiting for getByText('Training setup')\u001b[22m\n\n    at openCreate (/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts:13:42)\n    at /Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts:27:9",
+                    "location": {
+                      "file": "/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts",
+                      "column": 42,
+                      "line": 13
+                    },
+                    "snippet": "  11 |\n  12 | async function openCreate(page: any) {\n> 13 |   await page.getByText('Training setup').click();\n     |                                          ^\n  14 |   await page.getByText('Create my data').click();\n  15 | }\n  16 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts",
+                        "column": 42,
+                        "line": 13
+                      },
+                      "message": "Error: locator.click: Error: strict mode violation: getByText('Training setup') resolved to 2 elements:\n    1) <a class=\"\" href=\"/training\" data-nav=\"training\">Training setup</a> aka getByRole('link', { name: 'Training setup' })\n    2) <h2>Training setup</h2> aka getByRole('heading', { name: 'Training setup' })\n\nCall log:\n\u001b[2m  - waiting for getByText('Training setup')\u001b[22m\n\n\n  11 |\n  12 | async function openCreate(page: any) {\n> 13 |   await page.getByText('Training setup').click();\n     |                                          ^\n  14 |   await page.getByText('Create my data').click();\n  15 | }\n  16 |\n    at openCreate (/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts:13:42)\n    at /Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts:27:9"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-11-05T10:11:52.879Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/michellechua/uctp-tests/test-runs/2026-11-05/Test US1 - 2026-11-05 181147/artifacts/chrome/web-trn-01-W1-·-AC-1-·-sho-5b4c3-ssage-for-a-unique-taxpayer-chrome-retry1/attachments/screenshot-a5966df9ec77c538c3b2d97c44964430efdb3b40.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/michellechua/uctp-tests/test-runs/2026-11-05/Test US1 - 2026-11-05 181147/artifacts/chrome/web-trn-01-W1-·-AC-1-·-sho-5b4c3-ssage-for-a-unique-taxpayer-chrome-retry1/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts",
+                    "column": 42,
+                    "line": 13
+                  }
+                },
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 487,
+                  "error": {
+                    "message": "Error: locator.click: Error: strict mode violation: getByText('Training setup') resolved to 2 elements:\n    1) <a class=\"\" href=\"/training\" data-nav=\"training\">Training setup</a> aka getByRole('link', { name: 'Training setup' })\n    2) <h2>Training setup</h2> aka getByRole('heading', { name: 'Training setup' })\n\nCall log:\n\u001b[2m  - waiting for getByText('Training setup')\u001b[22m\n",
+                    "stack": "Error: locator.click: Error: strict mode violation: getByText('Training setup') resolved to 2 elements:\n    1) <a class=\"\" href=\"/training\" data-nav=\"training\">Training setup</a> aka getByRole('link', { name: 'Training setup' })\n    2) <h2>Training setup</h2> aka getByRole('heading', { name: 'Training setup' })\n\nCall log:\n\u001b[2m  - waiting for getByText('Training setup')\u001b[22m\n\n    at openCreate (/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts:13:42)\n    at /Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts:27:9",
+                    "location": {
+                      "file": "/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts",
+                      "column": 42,
+                      "line": 13
+                    },
+                    "snippet": "  11 |\n  12 | async function openCreate(page: any) {\n> 13 |   await page.getByText('Training setup').click();\n     |                                          ^\n  14 |   await page.getByText('Create my data').click();\n  15 | }\n  16 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts",
+                        "column": 42,
+                        "line": 13
+                      },
+                      "message": "Error: locator.click: Error: strict mode violation: getByText('Training setup') resolved to 2 elements:\n    1) <a class=\"\" href=\"/training\" data-nav=\"training\">Training setup</a> aka getByRole('link', { name: 'Training setup' })\n    2) <h2>Training setup</h2> aka getByRole('heading', { name: 'Training setup' })\n\nCall log:\n\u001b[2m  - waiting for getByText('Training setup')\u001b[22m\n\n\n  11 |\n  12 | async function openCreate(page: any) {\n> 13 |   await page.getByText('Training setup').click();\n     |                                          ^\n  14 |   await page.getByText('Create my data').click();\n  15 | }\n  16 |\n    at openCreate (/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts:13:42)\n    at /Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts:27:9"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 2,
+                  "startTime": "2026-11-05T10:11:54.034Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/michellechua/uctp-tests/test-runs/2026-11-05/Test US1 - 2026-11-05 181147/artifacts/chrome/web-trn-01-W1-·-AC-1-·-sho-5b4c3-ssage-for-a-unique-taxpayer-chrome-retry2/attachments/screenshot-bbaee2ee224c5817c082ba4d53da1ad430d5a95b.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/michellechua/uctp-tests/test-runs/2026-11-05/Test US1 - 2026-11-05 181147/artifacts/chrome/web-trn-01-W1-·-AC-1-·-sho-5b4c3-ssage-for-a-unique-taxpayer-chrome-retry2/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts",
+                    "column": 42,
+                    "line": 13
+                  }
+                },
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 503,
+                  "error": {
+                    "message": "Error: locator.click: Error: strict mode violation: getByText('Training setup') resolved to 2 elements:\n    1) <a class=\"\" href=\"/training\" data-nav=\"training\">Training setup</a> aka getByRole('link', { name: 'Training setup' })\n    2) <h2>Training setup</h2> aka getByRole('heading', { name: 'Training setup' })\n\nCall log:\n\u001b[2m  - waiting for getByText('Training setup')\u001b[22m\n",
+                    "stack": "Error: locator.click: Error: strict mode violation: getByText('Training setup') resolved to 2 elements:\n    1) <a class=\"\" href=\"/training\" data-nav=\"training\">Training setup</a> aka getByRole('link', { name: 'Training setup' })\n    2) <h2>Training setup</h2> aka getByRole('heading', { name: 'Training setup' })\n\nCall log:\n\u001b[2m  - waiting for getByText('Training setup')\u001b[22m\n\n    at openCreate (/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts:13:42)\n    at /Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts:27:9",
+                    "location": {
+                      "file": "/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts",
+                      "column": 42,
+                      "line": 13
+                    },
+                    "snippet": "  11 |\n  12 | async function openCreate(page: any) {\n> 13 |   await page.getByText('Training setup').click();\n     |                                          ^\n  14 |   await page.getByText('Create my data').click();\n  15 | }\n  16 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts",
+                        "column": 42,
+                        "line": 13
+                      },
+                      "message": "Error: locator.click: Error: strict mode violation: getByText('Training setup') resolved to 2 elements:\n    1) <a class=\"\" href=\"/training\" data-nav=\"training\">Training setup</a> aka getByRole('link', { name: 'Training setup' })\n    2) <h2>Training setup</h2> aka getByRole('heading', { name: 'Training setup' })\n\nCall log:\n\u001b[2m  - waiting for getByText('Training setup')\u001b[22m\n\n\n  11 |\n  12 | async function openCreate(page: any) {\n> 13 |   await page.getByText('Training setup').click();\n     |                                          ^\n  14 |   await page.getByText('Create my data').click();\n  15 | }\n  16 |\n    at openCreate (/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts:13:42)\n    at /Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts:27:9"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 3,
+                  "startTime": "2026-11-05T10:11:55.146Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/michellechua/uctp-tests/test-runs/2026-11-05/Test US1 - 2026-11-05 181147/artifacts/chrome/web-trn-01-W1-·-AC-1-·-sho-5b4c3-ssage-for-a-unique-taxpayer-chrome-retry3/attachments/screenshot-b6a4103d7e5a53d4b1e1dee47f00a3aea168b98f.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/michellechua/uctp-tests/test-runs/2026-11-05/Test US1 - 2026-11-05 181147/artifacts/chrome/web-trn-01-W1-·-AC-1-·-sho-5b4c3-ssage-for-a-unique-taxpayer-chrome-retry3/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts",
+                    "column": 42,
+                    "line": 13
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "55ceaf0a9589a0d92f22-e1cb6f5dba578b5a774d",
+          "file": "web/trn-01.spec.ts",
+          "line": 22,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-05T10:11:51.017Z",
+    "duration": 5032.3,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}
