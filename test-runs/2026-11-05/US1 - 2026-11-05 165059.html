@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Test run 20261105-165059</title>
+<style>
+:root{--ok:#15803d;--flaky:#b45309;--bad:#b91c1c;--blocked:#d97706;--grey:#6b7280;--line:#e5e7eb}
+body{font:15px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;margin:24px;color:#111827;background:#fff}
+h1{font-size:22px;margin:0 0 4px} .meta{color:var(--grey);margin:0 0 16px}
+.story{white-space:pre-wrap;background:#f9fafb;border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin:0 0 16px}
+.counts{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 18px}
+.count{border:1px solid var(--line);border-radius:8px;padding:8px 14px;min-width:90px}
+.count b{display:block;font-size:24px}
+table{border-collapse:collapse;width:100%} th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#f3f4f6} tr.click{cursor:pointer} tr.click:hover{background:#f9fafb}
+tr.detail{display:none} tr.detail.open{display:table-row} tr.detail td{background:#fafafa}
+pre{white-space:pre-wrap;word-break:break-word;margin:0 0 8px;font-size:13px}
+img{max-width:100%;border:1px solid var(--line)}
+.pill{display:inline-block;padding:1px 8px;border-radius:99px;color:#fff;font-size:13px;white-space:nowrap}
+.pill.passed{background:var(--ok)}.pill.flaky{background:var(--flaky)}.pill.failed{background:var(--bad)}
+.pill.blocked{background:var(--blocked)}.pill.not_tested{background:var(--grey)}
+.hint{color:var(--grey);font-size:13px}
+.msg{background:#fef3c7;border:1px solid #f59e0b;border-radius:8px;padding:8px 12px;margin:0 0 12px}
+@media print{tr.detail{display:table-row} .hint,.pdf{display:none} body{margin:0}}
+</style></head><body>
+<h1>Test run 20261105-165059</h1>
+<p class="meta">https://city-treasurer-staging.aiqe.pro · browsers: chrome · 2026-11-05T08:50:59.774Z to 2026-11-05T08:55:02.503Z</p>
+<div class="story">US1</div>
+<div class="counts"><div class="count"><b>51</b>Passed</div><div class="count"><b>8</b>Flaky</div><div class="count"><b>7</b>Failed</div><div class="count"><b>4</b>Blocked</div><div class="count"><b>36</b>Not tested</div></div>
+
+<p class="pdf"><a href="US1%20-%202026-11-05%20165059.pdf">Open the PDF</a> <span class="hint">· Click a red or amber row to see why.</span></p>
+<table><thead><tr><th>Id</th><th>AC</th><th>Test</th><th>Browser</th><th>Result</th></tr></thead><tbody>
+<tr class="row failed click" data-i="0" tabindex="0">
+<td>A1</td><td>AC-1</td><td>create taxpayer with a unique name and mobile</td><td>api</td><td><span class="pill failed">Failed</span></td></tr><tr class="detail" id="d0"><td colspan="5"><pre>Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: 201
+Received: 422
+
+  53 |     const response = await create(request, data);
+  54 |
+&gt; 55 |     expect(response.status()).toBe(201);</pre></td></tr>
+<tr class="row passed" data-i="1">
+<td>A1</td><td>AC-1</td><td>create a taxpayer using &quot;Ana Dela Cruz&quot; and a new mobile, no email</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row failed click" data-i="2" tabindex="0">
+<td>A2</td><td>AC-1</td><td>refuse missing full_name</td><td>api</td><td><span class="pill failed">Failed</span></td></tr><tr class="detail" id="d2"><td colspan="5"><pre>Error: expect(received).toBeTruthy()
+
+Received: undefined
+
+  65 |     expect(response.status()).toBe(422);
+  66 |     const body = await response.json();
+&gt; 67 |     expect(body.detail.full_name).toBeTruthy();
+     |                                   ^</pre></td></tr>
+<tr class="row passed" data-i="3">
+<td>A2</td><td>AC-2</td><td>read back the taxpayer from A1 by its taxpayer_id</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row failed click" data-i="4" tabindex="0">
+<td>A3</td><td>AC-1</td><td>refuse missing mobile</td><td>api</td><td><span class="pill failed">Failed</span></td></tr><tr class="detail" id="d4"><td colspan="5"><pre>Error: expect(received).toBeTruthy()
+
+Received: undefined
+
+  75 |     expect(response.status()).toBe(422);
+  76 |     const body = await response.json();
+&gt; 77 |     expect(body.detail.mobile).toBeTruthy();
+     |                                ^</pre></td></tr>
+<tr class="row passed" data-i="5">
+<td>A3</td><td>AC-2</td><td>find the taxpayer from A1 in my list (created_by = my name-tag)</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row passed" data-i="6">
+<td>A4</td><td>AC-1</td><td>refuse an empty JSON body</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row passed" data-i="7">
+<td>A4</td><td>AC-3</td><td>create a taxpayer using &quot;  Ana Dela Cruz  &quot; (spaces around): saved as &quot;Ana Dela Cruz&quot;</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row failed click" data-i="8" tabindex="0">
+<td>A5</td><td>AC-2</td><td>retrieve the taxpayer created under Mitch-6973</td><td>api</td><td><span class="pill failed">Failed</span></td></tr><tr class="detail" id="d8"><td colspan="5"><pre>Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: 201
+Received: 422
+
+  88 |     const created = await create(request, data);
+  89 |
+&gt; 90 |     expect(created.status()).toBe(201);</pre></td></tr>
+<tr class="row passed" data-i="9">
+<td>A5</td><td>AC-5</td><td>accept the full name &quot;Al&quot; (2 letters, the lower limit)</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row passed" data-i="10">
+<td>A6</td><td>AC-2</td><td>exclude taxpayer from a different name-tag list</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row passed" data-i="11">
+<td>A6</td><td>AC-5</td><td>accept a full name of 100 letters (the upper limit)</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row passed" data-i="12">
+<td>A7</td><td>AC-2</td><td>exclude a taxpayer belonging to another tenant</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row passed" data-i="13">
+<td>A7</td><td>AC-5</td><td>accept the full name &quot;Ñoño O&#39;Brien-Cruz Jr.&quot; (Ñ and . - &#39;)</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row blocked click" data-i="14" tabindex="0">
+<td>A8</td><td>AC-2</td><td>retrieve taxpayers without X-User-ID</td><td>api</td><td><span class="pill blocked">Blocked</span></td></tr><tr class="detail" id="d14"><td colspan="5"><pre>Did not run (skipped or stopped)</pre></td></tr>
+<tr class="row passed" data-i="15">
+<td>A8</td><td>AC-6</td><td>accept a blank email &quot;&quot; (saved as null)</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row flaky click" data-i="16" tabindex="0">
+<td>A9</td><td>AC-3</td><td>trim leading and trailing name spaces before storage</td><td>api</td><td><span class="pill flaky">Flaky</span></td></tr><tr class="detail" id="d16"><td colspan="5"><pre>Passed on retry 1. First failure:
+Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: 201
+Received: 422
+
+  143 |     });
+  144 |
+&gt; 145 |     expect(response.status()).toBe(201);</pre></td></tr>
+<tr class="row passed" data-i="17">
+<td>A9</td><td>AC-6</td><td>accept the email &quot;rosa@example.com&quot;</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row blocked click" data-i="18" tabindex="0">
+<td>A10</td><td>AC-3</td><td>refuse a name containing only spaces</td><td>api</td><td><span class="pill blocked">Blocked</span></td></tr><tr class="detail" id="d18"><td colspan="5"><pre>Did not run (skipped or stopped)</pre></td></tr>
+<tr class="row passed" data-i="19">
+<td>A10</td><td>AC-6</td><td>accept an email of 254 characters (the limit)</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row passed" data-i="20">
+<td>A11</td><td>AC-3</td><td>refuse a one-character name</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row passed" data-i="21">
+<td>A11</td><td>AC-8</td><td>accept the mobile +639 + 9 digits (saved as 09 + the same 9 digits)</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row passed" data-i="22">
+<td>A12</td><td>AC-3</td><td>refuse a 101-character name</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row passed" data-i="23">
+<td>A12</td><td>AC-5</td><td>refuse the full name &quot;A&quot; (1 letter)</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row flaky click" data-i="24" tabindex="0">
+<td>A13</td><td>AC-4</td><td>create taxpayer using an unregistered mobile</td><td>api</td><td><span class="pill flaky">Flaky</span></td></tr><tr class="detail" id="d24"><td colspan="5"><pre>Passed on retry 3. First failure:
+Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: 201
+Received: 422
+
+  183 |     const response = await create(request, uniqueData());
+  184 |
+&gt; 185 |     expect(response.status()).toBe(201);</pre></td></tr>
+<tr class="row passed" data-i="25">
+<td>A13</td><td>AC-5</td><td>refuse the full name &quot;  A  &quot; (1 letter with spaces around)</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row failed click" data-i="26" tabindex="0">
+<td>A14</td><td>AC-4</td><td>refuse reuse of an already registered mobile</td><td>api</td><td><span class="pill failed">Failed</span></td></tr><tr class="detail" id="d26"><td colspan="5"><pre>Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: 201
+Received: 422
+
+  189 |   test(&#39;A14 · AC-4 · refuse reuse of an already registered mobile&#39;, async ({ request }) =&gt; {
+  190 |     const data = uniqueData();
+&gt; 191 |     expect((await create(request, data)).status()).toBe(201);</pre></td></tr>
+<tr class="row passed" data-i="27">
+<td>A14</td><td>AC-5</td><td>refuse a full name of 101 letters (one too many)</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row flaky click" data-i="28" tabindex="0">
+<td>A15</td><td>AC-4</td><td>refuse duplicate mobile with a different taxpayer name</td><td>api</td><td><span class="pill flaky">Flaky</span></td></tr><tr class="detail" id="d28"><td colspan="5"><pre>Passed on retry 3. First failure:
+Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: 409
+Received: 201
+
+  210 |     });
+  211 |
+&gt; 212 |     expect(response.status()).toBe(409);</pre></td></tr>
+<tr class="row passed" data-i="29">
+<td>A15</td><td>AC-5</td><td>refuse the full name &quot;Ana 2&quot; (a digit)</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row blocked click" data-i="30" tabindex="0">
+<td>A16</td><td>AC-4</td><td>check duplicate mobile under another name-tag</td><td>api</td><td><span class="pill blocked">Blocked</span></td></tr><tr class="detail" id="d30"><td colspan="5"><pre>Did not run (skipped or stopped)</pre></td></tr>
+<tr class="row passed" data-i="31">
+<td>A16</td><td>AC-5</td><td>refuse the full name &quot;Ana@Cruz&quot; (a symbol)</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row passed" data-i="32">
+<td>A17</td><td>AC-5</td><td>accept a two-character alphabetic name</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row passed" data-i="33">
+<td>A17</td><td>AC-5</td><td>refuse a blank full name &quot;&quot;</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row passed" data-i="34">
+<td>A18</td><td>AC-5</td><td>refuse a one-character name</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row passed" data-i="35">
+<td>A18</td><td>AC-8</td><td>refuse the mobile 0917123456 (10 digits)</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row passed" data-i="36">
+<td>A19</td><td>AC-5</td><td>refuse a 101-character name</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row passed" data-i="37">
+<td>A19</td><td>AC-8</td><td>refuse the mobile 091712345678 (12 digits)</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row passed" data-i="38">
+<td>A20</td><td>AC-5</td><td>refuse a name containing an at sign</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row passed" data-i="39">
+<td>A20</td><td>AC-8</td><td>refuse the mobile &quot;0917 123 4567&quot; (spaces)</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row passed" data-i="40">
+<td>A21</td><td>AC-5</td><td>accept a 100-character name</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row passed" data-i="41">
+<td>A21</td><td>AC-8</td><td>refuse the mobile 0917-123-4567 (dashes)</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row flaky click" data-i="42" tabindex="0">
+<td>A22</td><td>AC-6</td><td>create taxpayer without optional email</td><td>api</td><td><span class="pill flaky">Flaky</span></td></tr><tr class="detail" id="d42"><td colspan="5"><pre>Passed on retry 1. First failure:
+Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: 201
+Received: 422
+
+  274 |     const response = await create(request, data);
+  275 |
+&gt; 276 |     expect(response.status()).toBe(201);</pre></td></tr>
+<tr class="row passed" data-i="43">
+<td>A22</td><td>AC-8</td><td>refuse the mobile 08171234567 (starts with 08)</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row flaky click" data-i="44" tabindex="0">
+<td>A23</td><td>AC-6</td><td>accept formatted email</td><td>api</td><td><span class="pill flaky">Flaky</span></td></tr><tr class="detail" id="d44"><td colspan="5"><pre>Passed on retry 3. First failure:
+Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: 201
+Received: 422
+
+  285 |     });
+  286 |
+&gt; 287 |     expect(response.status()).toBe(201);</pre></td></tr>
+<tr class="row passed" data-i="45">
+<td>A23</td><td>AC-8</td><td>refuse the mobile +638171234567 (starts with +638)</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row flaky click" data-i="46" tabindex="0">
+<td>A24</td><td>AC-6</td><td>refuse email without at sign</td><td>api</td><td><span class="pill flaky">Flaky</span></td></tr><tr class="detail" id="d46"><td colspan="5"><pre>Passed on retry 2. First failure:
+Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: &quot;invalid email format&quot;
+Received: undefined
+
+  296 |
+  297 |     expect(response.status()).toBe(422);
+&gt; 298 |     expect((await response.json()).detail.email).toBe(emailError);</pre></td></tr>
+<tr class="row passed" data-i="47">
+<td>A24</td><td>AC-6</td><td>refuse the email &quot;rosa.example.com&quot; (no @)</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row flaky click" data-i="48" tabindex="0">
+<td>A25</td><td>AC-6</td><td>refuse email without a dot after at sign</td><td>api</td><td><span class="pill flaky">Flaky</span></td></tr><tr class="detail" id="d48"><td colspan="5"><pre>Passed on retry 1. First failure:
+Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: &quot;invalid email format&quot;
+Received: undefined
+
+  306 |
+  307 |     expect(response.status()).toBe(422);
+&gt; 308 |     expect((await response.json()).detail.email).toBe(emailError);</pre></td></tr>
+<tr class="row passed" data-i="49">
+<td>A25</td><td>AC-6</td><td>refuse the email &quot;rosa@@example.com&quot; (two @)</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row passed" data-i="50">
+<td>A26</td><td>AC-6</td><td>refuse email exceeding 254 characters</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row passed" data-i="51">
+<td>A26</td><td>AC-6</td><td>refuse the email &quot;rosa@examplecom&quot; (no dot after @)</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row passed" data-i="52">
+<td>A27</td><td>AC-7</td><td>list taxpayer under its creating name-tag</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row passed" data-i="53">
+<td>A27</td><td>AC-6</td><td>refuse an email of 255 characters (one too many)</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row passed" data-i="54">
+<td>A28</td><td>AC-7</td><td>hide taxpayer from Mitch-6973-other</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row passed" data-i="55">
+<td>A28</td><td>AC-4</td><td>refuse a mobile I already registered (409)</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row passed" data-i="56">
+<td>A29</td><td>AC-7</td><td>hide other name-tag taxpayer from Mitch-6973</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row passed" data-i="57">
+<td>A29</td><td>AC-4</td><td>refuse a mobile I already registered, sent in +639 form (409)</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row blocked click" data-i="58" tabindex="0">
+<td>A30</td><td>AC-7</td><td>retrieve list with empty X-User-ID</td><td>api</td><td><span class="pill blocked">Blocked</span></td></tr><tr class="detail" id="d58"><td colspan="5"><pre>Did not run (skipped or stopped)</pre></td></tr>
+<tr class="row passed" data-i="59">
+<td>A30</td><td>AC-5</td><td>save nothing when the full name &quot;A&quot; is refused (the same mobile then works)</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row passed" data-i="60">
+<td>A31</td><td>AC-8</td><td>accept 09 followed by nine digits</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row passed" data-i="61">
+<td>A31</td><td>AC-7</td><td>hide my taxpayer from another user (X-User-ID &lt;me&gt;-probe gets 404)</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row failed click" data-i="62" tabindex="0">
+<td>A32</td><td>AC-8</td><td>accept +639 followed by nine digits</td><td>api</td><td><span class="pill failed">Failed</span></td></tr><tr class="detail" id="d62"><td colspan="5"><pre>Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: 201
+Received: 409
+
+  376 |     });
+  377 |
+&gt; 378 |     expect(response.status()).toBe(201);</pre></td></tr>
+<tr class="row passed" data-i="63">
+<td>A32</td><td>AC-7</td><td>leave my taxpayer out of another user&#39;s list (X-User-ID &lt;me&gt;-probe)</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row passed" data-i="64">
+<td>A33</td><td>AC-8</td><td>refuse mobile with eight digits after 09</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row passed" data-i="65">
+<td>A33</td><td>AC-7</td><td>treat my name-tag in other letter case as another user (404)</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row failed click" data-i="66" tabindex="0">
+<td>A34</td><td>AC-8</td><td>refuse mobile with ten digits after 09</td><td>api</td><td><span class="pill failed">Failed</span></td></tr><tr class="detail" id="d66"><td colspan="5"><pre>Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: &quot;must be a PH mobile 09XXXXXXXXX or +639XXXXXXXXX&quot;
+Received: undefined
+
+  397 |
+  398 |     expect(response.status()).toBe(422);
+&gt; 399 |     expect((await response.json()).detail.mobile).toBe(mobileError);</pre></td></tr>
+<tr class="row passed" data-i="67">
+<td>A34</td><td>AC-7</td><td>refuse a request with no X-User-ID header (422)</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row flaky click" data-i="68" tabindex="0">
+<td>A35</td><td>AC-8</td><td>refuse mobile containing spaces</td><td>api</td><td><span class="pill flaky">Flaky</span></td></tr><tr class="detail" id="d68"><td colspan="5"><pre>Passed on retry 3. First failure:
+Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: &quot;must be a PH mobile 09XXXXXXXXX or +639XXXXXXXXX&quot;
+Received: undefined
+
+  407 |
+  408 |     expect(response.status()).toBe(422);
+&gt; 409 |     expect((await response.json()).detail.mobile).toBe(mobileError);</pre></td></tr>
+<tr class="row passed" data-i="69">
+<td>A36</td><td>AC-8</td><td>refuse mobile containing dashes</td><td>api</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row not_tested" data-i="70">
+<td>W1</td><td></td><td>(no test ran for this charter line)</td><td>-</td><td><span class="pill not_tested">Not tested</span></td></tr>
+<tr class="row not_tested" data-i="71">
+<td>W2</td><td></td><td>(no test ran for this charter line)</td><td>-</td><td><span class="pill not_tested">Not tested</span></td></tr>
+<tr class="row not_tested" data-i="72">
+<td>W3</td><td></td><td>(no test ran for this charter line)</td><td>-</td><td><span class="pill not_tested">Not tested</span></td></tr>
+<tr class="row not_tested" data-i="73">
+<td>W4</td><td></td><td>(no test ran for this charter line)</td><td>-</td><td><span class="pill not_tested">Not tested</span></td></tr>
+<tr class="row not_tested" data-i="74">
+<td>W5</td><td></td><td>(no test ran for this charter line)</td><td>-</td><td><span class="pill not_tested">Not tested</span></td></tr>
+<tr class="row not_tested" data-i="75">
+<td>W6</td><td></td><td>(no test ran for this charter line)</td><td>-</td><td><span class="pill not_tested">Not tested</span></td></tr>
+<tr class="row not_tested" data-i="76">
+<td>W7</td><td></td><td>(no test ran for this charter line)</td><td>-</td><td><span class="pill not_tested">Not tested</span></td></tr>
+<tr class="row not_tested" data-i="77">
+<td>W8</td><td></td><td>(no test ran for this charter line)</td><td>-</td><td><span class="pill not_tested">Not tested</span></td></tr>
+<tr class="row not_tested" data-i="78">
+<td>W9</td><td></td><td>(no test ran for this charter line)</td><td>-</td><td><span class="pill not_tested">Not tested</span></td></tr>
+<tr class="row not_tested" data-i="79">
+<td>W10</td><td></td><td>(no test ran for this charter line)</td><td>-</td><td><span class="pill not_tested">Not tested</span></td></tr>
+<tr class="row not_tested" data-i="80">
+<td>W11</td><td></td><td>(no test ran for this charter line)</td><td>-</td><td><span class="pill not_tested">Not tested</span></td></tr>
+<tr class="row not_tested" data-i="81">
+<td>W12</td><td></td><td>(no test ran for this charter line)</td><td>-</td><td><span class="pill not_tested">Not tested</span></td></tr>
+<tr class="row not_tested" data-i="82">
+<td>W13</td><td></td><td>(no test ran for this charter line)</td><td>-</td><td><span class="pill not_tested">Not tested</span></td></tr>
+<tr class="row not_tested" data-i="83">
+<td>W14</td><td></td><td>(no test ran for this charter line)</td><td>-</td><td><span class="pill not_tested">Not tested</span></td></tr>
+<tr class="row not_tested" data-i="84">
+<td>W15</td><td></td><td>(no test ran for this charter line)</td><td>-</td><td><span class="pill not_tested">Not tested</span></td></tr>
+<tr class="row not_tested" data-i="85">
+<td>W16</td><td></td><td>(no test ran for this charter line)</td><td>-</td><td><span class="pill not_tested">Not tested</span></td></tr>
+<tr class="row not_tested" data-i="86">
+<td>W17</td><td></td><td>(no test ran for this charter line)</td><td>-</td><td><span class="pill not_tested">Not tested</span></td></tr>
+<tr class="row not_tested" data-i="87">
+<td>W18</td><td></td><td>(no test ran for this charter line)</td><td>-</td><td><span class="pill not_tested">Not tested</span></td></tr>
+<tr class="row not_tested" data-i="88">
+<td>W19</td><td></td><td>(no test ran for this charter line)</td><td>-</td><td><span class="pill not_tested">Not tested</span></td></tr>
+<tr class="row not_tested" data-i="89">
+<td>W20</td><td></td><td>(no test ran for this charter line)</td><td>-</td><td><span class="pill not_tested">Not tested</span></td></tr>
+<tr class="row not_tested" data-i="90">
+<td>W21</td><td></td><td>(no test ran for this charter line)</td><td>-</td><td><span class="pill not_tested">Not tested</span></td></tr>
+<tr class="row not_tested" data-i="91">
+<td>W22</td><td></td><td>(no test ran for this charter line)</td><td>-</td><td><span class="pill not_tested">Not tested</span></td></tr>
+<tr class="row not_tested" data-i="92">
+<td>W23</td><td></td><td>(no test ran for this charter line)</td><td>-</td><td><span class="pill not_tested">Not tested</span></td></tr>
+<tr class="row not_tested" data-i="93">
+<td>W24</td><td></td><td>(no test ran for this charter line)</td><td>-</td><td><span class="pill not_tested">Not tested</span></td></tr>
+<tr class="row not_tested" data-i="94">
+<td>W25</td><td></td><td>(no test ran for this charter line)</td><td>-</td><td><span class="pill not_tested">Not tested</span></td></tr>
+<tr class="row not_tested" data-i="95">
+<td>W26</td><td></td><td>(no test ran for this charter line)</td><td>-</td><td><span class="pill not_tested">Not tested</span></td></tr>
+<tr class="row not_tested" data-i="96">
+<td>W27</td><td></td><td>(no test ran for this charter line)</td><td>-</td><td><span class="pill not_tested">Not tested</span></td></tr>
+<tr class="row not_tested" data-i="97">
+<td>W28</td><td></td><td>(no test ran for this charter line)</td><td>-</td><td><span class="pill not_tested">Not tested</span></td></tr>
+<tr class="row not_tested" data-i="98">
+<td>W29</td><td></td><td>(no test ran for this charter line)</td><td>-</td><td><span class="pill not_tested">Not tested</span></td></tr>
+<tr class="row not_tested" data-i="99">
+<td>W30</td><td></td><td>(no test ran for this charter line)</td><td>-</td><td><span class="pill not_tested">Not tested</span></td></tr>
+<tr class="row not_tested" data-i="100">
+<td>W31</td><td></td><td>(no test ran for this charter line)</td><td>-</td><td><span class="pill not_tested">Not tested</span></td></tr>
+<tr class="row not_tested" data-i="101">
+<td>W32</td><td></td><td>(no test ran for this charter line)</td><td>-</td><td><span class="pill not_tested">Not tested</span></td></tr>
+<tr class="row not_tested" data-i="102">
+<td>W33</td><td></td><td>(no test ran for this charter line)</td><td>-</td><td><span class="pill not_tested">Not tested</span></td></tr>
+<tr class="row not_tested" data-i="103">
+<td>W34</td><td></td><td>(no test ran for this charter line)</td><td>-</td><td><span class="pill not_tested">Not tested</span></td></tr>
+<tr class="row not_tested" data-i="104">
+<td>W35</td><td></td><td>(no test ran for this charter line)</td><td>-</td><td><span class="pill not_tested">Not tested</span></td></tr>
+<tr class="row not_tested" data-i="105">
+<td>W36</td><td></td><td>(no test ran for this charter line)</td><td>-</td><td><span class="pill not_tested">Not tested</span></td></tr>
+</tbody></table>
+<script>
+document.querySelectorAll('tr.click').forEach(function (tr) {
+  function toggle() { var d = document.getElementById('d' + tr.dataset.i); if (d) d.classList.toggle('open'); }
+  tr.addEventListener('click', toggle);
+  tr.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+});
+</script>
+</body></html>
