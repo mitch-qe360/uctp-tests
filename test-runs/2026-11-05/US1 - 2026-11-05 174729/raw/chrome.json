@@ -1,0 +1,319 @@
+{
+  "config": {
+    "argv": [
+      "/usr/local/bin/node",
+      "/Users/michellechua/uctp-tests/node_modules/@playwright/test/cli.js",
+      "test",
+      "tests/web",
+      "tests/integration",
+      "--project=chrome",
+      "--workers=1",
+      "--retries=3",
+      "--pass-with-no-tests",
+      "--grep",
+      "(?:^|\\s)(A13|A1|W1) ·",
+      "--headed"
+    ],
+    "configFile": "/Users/michellechua/uctp-tests/playwright.config.ts",
+    "rootDir": "/Users/michellechua/uctp-tests/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/michellechua/uctp-tests/test-runs/2026-11-05/US1 - 2026-11-05 174729/artifacts/chrome",
+        "repeatEach": 1,
+        "retries": 3,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "api",
+        "name": "api",
+        "testDir": "/Users/michellechua/uctp-tests/tests/api",
+        "testIgnore": [],
+        "testMatch": [
+          "/.*\\.spec\\.(ts|js|mjs)$/"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/michellechua/uctp-tests/test-runs/2026-11-05/US1 - 2026-11-05 174729/artifacts/chrome",
+        "repeatEach": 1,
+        "retries": 3,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chrome",
+        "name": "chrome",
+        "testDir": "/Users/michellechua/uctp-tests/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/(web|integration)[\\\\/].*\\.spec\\.(ts|js|mjs)$/"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/michellechua/uctp-tests/test-runs/2026-11-05/US1 - 2026-11-05 174729/artifacts/chrome",
+        "repeatEach": 1,
+        "retries": 3,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/michellechua/uctp-tests/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/(web|integration)[\\\\/].*\\.spec\\.(ts|js|mjs)$/"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/Users/michellechua/uctp-tests/test-runs/2026-11-05/US1 - 2026-11-05 174729/raw/chrome.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "web/trn-01.spec.ts",
+      "file": "web/trn-01.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "W1 · AC-1 · show created message for a unique taxpayer",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chrome",
+              "projectName": "chrome",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 962,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Your name')\nExpected: visible\nError: strict mode violation: getByText('Your name') resolved to 2 elements:\n    1) <a href=\"#\" @click.prevent=\"askName()\">set your name</a> aka getByRole('link', { name: 'set your name' })\n    2) <h2>Your name</h2> aka getByRole('heading', { name: 'Your name' })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('Your name') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Your name')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Your name')\nExpected: visible\nError: strict mode violation: getByText('Your name') resolved to 2 elements:\n    1) <a href=\"#\" @click.prevent=\"askName()\">set your name</a> aka getByRole('link', { name: 'set your name' })\n    2) <h2>Your name</h2> aka getByRole('heading', { name: 'Your name' })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('Your name') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Your name')\u001b[22m\n\n    at setup (/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts:12:25)\n    at /Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts:32:3",
+                    "location": {
+                      "file": "/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts",
+                      "column": 25,
+                      "line": 12
+                    },
+                    "snippet": "  10 |\n  11 |   const nameBox = page.getByText('Your name');\n> 12 |   await expect(nameBox).toBeVisible();\n     |                         ^\n  13 |\n  14 |   await page.getByRole('textbox').first().fill(nameTag);\n  15 |   await page.getByRole('button', { name: 'Save' }).click();"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts",
+                        "column": 25,
+                        "line": 12
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Your name')\nExpected: visible\nError: strict mode violation: getByText('Your name') resolved to 2 elements:\n    1) <a href=\"#\" @click.prevent=\"askName()\">set your name</a> aka getByRole('link', { name: 'set your name' })\n    2) <h2>Your name</h2> aka getByRole('heading', { name: 'Your name' })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('Your name') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Your name')\u001b[22m\n\n\n  10 |\n  11 |   const nameBox = page.getByText('Your name');\n> 12 |   await expect(nameBox).toBeVisible();\n     |                         ^\n  13 |\n  14 |   await page.getByRole('textbox').first().fill(nameTag);\n  15 |   await page.getByRole('button', { name: 'Save' }).click();\n    at setup (/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts:12:25)\n    at /Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts:32:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T09:47:34.746Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/michellechua/uctp-tests/test-runs/2026-11-05/US1 - 2026-11-05 174729/artifacts/chrome/web-trn-01-W1-·-AC-1-·-sho-5b4c3-ssage-for-a-unique-taxpayer-chrome/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts",
+                    "column": 25,
+                    "line": 12
+                  }
+                },
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 772,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Your name')\nExpected: visible\nError: strict mode violation: getByText('Your name') resolved to 2 elements:\n    1) <a href=\"#\" @click.prevent=\"askName()\">set your name</a> aka getByRole('link', { name: 'set your name' })\n    2) <h2>Your name</h2> aka getByRole('heading', { name: 'Your name' })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('Your name') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Your name')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Your name')\nExpected: visible\nError: strict mode violation: getByText('Your name') resolved to 2 elements:\n    1) <a href=\"#\" @click.prevent=\"askName()\">set your name</a> aka getByRole('link', { name: 'set your name' })\n    2) <h2>Your name</h2> aka getByRole('heading', { name: 'Your name' })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('Your name') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Your name')\u001b[22m\n\n    at setup (/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts:12:25)\n    at /Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts:32:3",
+                    "location": {
+                      "file": "/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts",
+                      "column": 25,
+                      "line": 12
+                    },
+                    "snippet": "  10 |\n  11 |   const nameBox = page.getByText('Your name');\n> 12 |   await expect(nameBox).toBeVisible();\n     |                         ^\n  13 |\n  14 |   await page.getByRole('textbox').first().fill(nameTag);\n  15 |   await page.getByRole('button', { name: 'Save' }).click();"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts",
+                        "column": 25,
+                        "line": 12
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Your name')\nExpected: visible\nError: strict mode violation: getByText('Your name') resolved to 2 elements:\n    1) <a href=\"#\" @click.prevent=\"askName()\">set your name</a> aka getByRole('link', { name: 'set your name' })\n    2) <h2>Your name</h2> aka getByRole('heading', { name: 'Your name' })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('Your name') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Your name')\u001b[22m\n\n\n  10 |\n  11 |   const nameBox = page.getByText('Your name');\n> 12 |   await expect(nameBox).toBeVisible();\n     |                         ^\n  13 |\n  14 |   await page.getByRole('textbox').first().fill(nameTag);\n  15 |   await page.getByRole('button', { name: 'Save' }).click();\n    at setup (/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts:12:25)\n    at /Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts:32:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-11-05T09:47:36.321Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/michellechua/uctp-tests/test-runs/2026-11-05/US1 - 2026-11-05 174729/artifacts/chrome/web-trn-01-W1-·-AC-1-·-sho-5b4c3-ssage-for-a-unique-taxpayer-chrome-retry1/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts",
+                    "column": 25,
+                    "line": 12
+                  }
+                },
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 830,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Your name')\nExpected: visible\nError: strict mode violation: getByText('Your name') resolved to 2 elements:\n    1) <a href=\"#\" @click.prevent=\"askName()\">set your name</a> aka getByRole('link', { name: 'set your name' })\n    2) <h2>Your name</h2> aka getByRole('heading', { name: 'Your name' })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('Your name') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Your name')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Your name')\nExpected: visible\nError: strict mode violation: getByText('Your name') resolved to 2 elements:\n    1) <a href=\"#\" @click.prevent=\"askName()\">set your name</a> aka getByRole('link', { name: 'set your name' })\n    2) <h2>Your name</h2> aka getByRole('heading', { name: 'Your name' })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('Your name') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Your name')\u001b[22m\n\n    at setup (/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts:12:25)\n    at /Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts:32:3",
+                    "location": {
+                      "file": "/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts",
+                      "column": 25,
+                      "line": 12
+                    },
+                    "snippet": "  10 |\n  11 |   const nameBox = page.getByText('Your name');\n> 12 |   await expect(nameBox).toBeVisible();\n     |                         ^\n  13 |\n  14 |   await page.getByRole('textbox').first().fill(nameTag);\n  15 |   await page.getByRole('button', { name: 'Save' }).click();"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts",
+                        "column": 25,
+                        "line": 12
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Your name')\nExpected: visible\nError: strict mode violation: getByText('Your name') resolved to 2 elements:\n    1) <a href=\"#\" @click.prevent=\"askName()\">set your name</a> aka getByRole('link', { name: 'set your name' })\n    2) <h2>Your name</h2> aka getByRole('heading', { name: 'Your name' })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('Your name') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Your name')\u001b[22m\n\n\n  10 |\n  11 |   const nameBox = page.getByText('Your name');\n> 12 |   await expect(nameBox).toBeVisible();\n     |                         ^\n  13 |\n  14 |   await page.getByRole('textbox').first().fill(nameTag);\n  15 |   await page.getByRole('button', { name: 'Save' }).click();\n    at setup (/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts:12:25)\n    at /Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts:32:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 2,
+                  "startTime": "2026-11-05T09:47:37.663Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/michellechua/uctp-tests/test-runs/2026-11-05/US1 - 2026-11-05 174729/artifacts/chrome/web-trn-01-W1-·-AC-1-·-sho-5b4c3-ssage-for-a-unique-taxpayer-chrome-retry2/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts",
+                    "column": 25,
+                    "line": 12
+                  }
+                },
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 794,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Your name')\nExpected: visible\nError: strict mode violation: getByText('Your name') resolved to 2 elements:\n    1) <a href=\"#\" @click.prevent=\"askName()\">set your name</a> aka getByRole('link', { name: 'set your name' })\n    2) <h2>Your name</h2> aka getByRole('heading', { name: 'Your name' })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('Your name') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Your name')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Your name')\nExpected: visible\nError: strict mode violation: getByText('Your name') resolved to 2 elements:\n    1) <a href=\"#\" @click.prevent=\"askName()\">set your name</a> aka getByRole('link', { name: 'set your name' })\n    2) <h2>Your name</h2> aka getByRole('heading', { name: 'Your name' })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('Your name') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Your name')\u001b[22m\n\n    at setup (/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts:12:25)\n    at /Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts:32:3",
+                    "location": {
+                      "file": "/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts",
+                      "column": 25,
+                      "line": 12
+                    },
+                    "snippet": "  10 |\n  11 |   const nameBox = page.getByText('Your name');\n> 12 |   await expect(nameBox).toBeVisible();\n     |                         ^\n  13 |\n  14 |   await page.getByRole('textbox').first().fill(nameTag);\n  15 |   await page.getByRole('button', { name: 'Save' }).click();"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts",
+                        "column": 25,
+                        "line": 12
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Your name')\nExpected: visible\nError: strict mode violation: getByText('Your name') resolved to 2 elements:\n    1) <a href=\"#\" @click.prevent=\"askName()\">set your name</a> aka getByRole('link', { name: 'set your name' })\n    2) <h2>Your name</h2> aka getByRole('heading', { name: 'Your name' })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('Your name') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Your name')\u001b[22m\n\n\n  10 |\n  11 |   const nameBox = page.getByText('Your name');\n> 12 |   await expect(nameBox).toBeVisible();\n     |                         ^\n  13 |\n  14 |   await page.getByRole('textbox').first().fill(nameTag);\n  15 |   await page.getByRole('button', { name: 'Save' }).click();\n    at setup (/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts:12:25)\n    at /Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts:32:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 3,
+                  "startTime": "2026-11-05T09:47:39.099Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/michellechua/uctp-tests/test-runs/2026-11-05/US1 - 2026-11-05 174729/artifacts/chrome/web-trn-01-W1-·-AC-1-·-sho-5b4c3-ssage-for-a-unique-taxpayer-chrome-retry3/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/michellechua/uctp-tests/tests/web/trn-01.spec.ts",
+                    "column": 25,
+                    "line": 12
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "55ceaf0a9589a0d92f22-e1cb6f5dba578b5a774d",
+          "file": "web/trn-01.spec.ts",
+          "line": 28,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-05T09:47:34.504Z",
+    "duration": 5774.607,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

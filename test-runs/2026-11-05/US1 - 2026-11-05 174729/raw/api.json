@@ -1,0 +1,351 @@
+{
+  "config": {
+    "argv": [
+      "/usr/local/bin/node",
+      "/Users/michellechua/uctp-tests/node_modules/@playwright/test/cli.js",
+      "test",
+      "tests/api",
+      "--project=api",
+      "--workers=1",
+      "--retries=3",
+      "--pass-with-no-tests",
+      "--grep",
+      "(?:^|\\s)(A13|A1|W1) ·"
+    ],
+    "configFile": "/Users/michellechua/uctp-tests/playwright.config.ts",
+    "rootDir": "/Users/michellechua/uctp-tests/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/michellechua/uctp-tests/test-runs/2026-11-05/US1 - 2026-11-05 174729/artifacts/api",
+        "repeatEach": 1,
+        "retries": 3,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "api",
+        "name": "api",
+        "testDir": "/Users/michellechua/uctp-tests/tests/api",
+        "testIgnore": [],
+        "testMatch": [
+          "/.*\\.spec\\.(ts|js|mjs)$/"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/michellechua/uctp-tests/test-runs/2026-11-05/US1 - 2026-11-05 174729/artifacts/api",
+        "repeatEach": 1,
+        "retries": 3,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chrome",
+        "name": "chrome",
+        "testDir": "/Users/michellechua/uctp-tests/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/(web|integration)[\\\\/].*\\.spec\\.(ts|js|mjs)$/"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/michellechua/uctp-tests/test-runs/2026-11-05/US1 - 2026-11-05 174729/artifacts/api",
+        "repeatEach": 1,
+        "retries": 3,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/michellechua/uctp-tests/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/(web|integration)[\\\\/].*\\.spec\\.(ts|js|mjs)$/"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/Users/michellechua/uctp-tests/test-runs/2026-11-05/US1 - 2026-11-05 174729/raw/api.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "api/trn-01.spec.ts",
+      "file": "api/trn-01.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "A1 · AC-1 · create taxpayer with unique name and mobile",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "api",
+              "projectName": "api",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 440,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m201\u001b[39m\nReceived: \u001b[31m422\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m201\u001b[39m\nReceived: \u001b[31m422\u001b[39m\n    at /Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts:31:29",
+                    "location": {
+                      "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                      "column": 29,
+                      "line": 31
+                    },
+                    "snippet": "  29 |   const response = await create(request, data);\n  30 |\n> 31 |   expect(response.status()).toBe(201);\n     |                             ^\n  32 |   const body = await response.json();\n  33 |   expect(body.taxpayer_id).toBeTruthy();\n  34 | });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                        "column": 29,
+                        "line": 31
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m201\u001b[39m\nReceived: \u001b[31m422\u001b[39m\n\n  29 |   const response = await create(request, data);\n  30 |\n> 31 |   expect(response.status()).toBe(201);\n     |                             ^\n  32 |   const body = await response.json();\n  33 |   expect(body.taxpayer_id).toBeTruthy();\n  34 | });\n    at /Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts:31:29"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T09:47:30.512Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/michellechua/uctp-tests/test-runs/2026-11-05/US1 - 2026-11-05 174729/artifacts/api/trn-01-A1-·-AC-1-·-create--93e7b-with-unique-name-and-mobile-api/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                    "column": 29,
+                    "line": 31
+                  }
+                },
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 476,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m201\u001b[39m\nReceived: \u001b[31m422\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m201\u001b[39m\nReceived: \u001b[31m422\u001b[39m\n    at /Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts:31:29",
+                    "location": {
+                      "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                      "column": 29,
+                      "line": 31
+                    },
+                    "snippet": "  29 |   const response = await create(request, data);\n  30 |\n> 31 |   expect(response.status()).toBe(201);\n     |                             ^\n  32 |   const body = await response.json();\n  33 |   expect(body.taxpayer_id).toBeTruthy();\n  34 | });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                        "column": 29,
+                        "line": 31
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m201\u001b[39m\nReceived: \u001b[31m422\u001b[39m\n\n  29 |   const response = await create(request, data);\n  30 |\n> 31 |   expect(response.status()).toBe(201);\n     |                             ^\n  32 |   const body = await response.json();\n  33 |   expect(body.taxpayer_id).toBeTruthy();\n  34 | });\n    at /Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts:31:29"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-11-05T09:47:31.214Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/michellechua/uctp-tests/test-runs/2026-11-05/US1 - 2026-11-05 174729/artifacts/api/trn-01-A1-·-AC-1-·-create--93e7b-with-unique-name-and-mobile-api-retry1/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                    "column": 29,
+                    "line": 31
+                  }
+                },
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 267,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m201\u001b[39m\nReceived: \u001b[31m422\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m201\u001b[39m\nReceived: \u001b[31m422\u001b[39m\n    at /Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts:31:29",
+                    "location": {
+                      "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                      "column": 29,
+                      "line": 31
+                    },
+                    "snippet": "  29 |   const response = await create(request, data);\n  30 |\n> 31 |   expect(response.status()).toBe(201);\n     |                             ^\n  32 |   const body = await response.json();\n  33 |   expect(body.taxpayer_id).toBeTruthy();\n  34 | });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                        "column": 29,
+                        "line": 31
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m201\u001b[39m\nReceived: \u001b[31m422\u001b[39m\n\n  29 |   const response = await create(request, data);\n  30 |\n> 31 |   expect(response.status()).toBe(201);\n     |                             ^\n  32 |   const body = await response.json();\n  33 |   expect(body.taxpayer_id).toBeTruthy();\n  34 | });\n    at /Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts:31:29"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 2,
+                  "startTime": "2026-11-05T09:47:31.943Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/michellechua/uctp-tests/test-runs/2026-11-05/US1 - 2026-11-05 174729/artifacts/api/trn-01-A1-·-AC-1-·-create--93e7b-with-unique-name-and-mobile-api-retry2/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                    "column": 29,
+                    "line": 31
+                  }
+                },
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 229,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m201\u001b[39m\nReceived: \u001b[31m422\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m201\u001b[39m\nReceived: \u001b[31m422\u001b[39m\n    at /Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts:31:29",
+                    "location": {
+                      "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                      "column": 29,
+                      "line": 31
+                    },
+                    "snippet": "  29 |   const response = await create(request, data);\n  30 |\n> 31 |   expect(response.status()).toBe(201);\n     |                             ^\n  32 |   const body = await response.json();\n  33 |   expect(body.taxpayer_id).toBeTruthy();\n  34 | });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                        "column": 29,
+                        "line": 31
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m201\u001b[39m\nReceived: \u001b[31m422\u001b[39m\n\n  29 |   const response = await create(request, data);\n  30 |\n> 31 |   expect(response.status()).toBe(201);\n     |                             ^\n  32 |   const body = await response.json();\n  33 |   expect(body.taxpayer_id).toBeTruthy();\n  34 | });\n    at /Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts:31:29"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 3,
+                  "startTime": "2026-11-05T09:47:32.457Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/michellechua/uctp-tests/test-runs/2026-11-05/US1 - 2026-11-05 174729/artifacts/api/trn-01-A1-·-AC-1-·-create--93e7b-with-unique-name-and-mobile-api-retry3/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/michellechua/uctp-tests/tests/api/trn-01.spec.ts",
+                    "column": 29,
+                    "line": 31
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "75f030cb6bceb9195b96-ccbb37d820c0873e28c6",
+          "file": "api/trn-01.spec.ts",
+          "line": 27,
+          "column": 5
+        },
+        {
+          "title": "A13 · AC-5 · refuse the one-character name \"A\"",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "api",
+              "projectName": "api",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 330,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T09:47:32.936Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "75f030cb6bceb9195b96-f2654e765f16f92f7a6d",
+          "file": "api/trn-01.spec.ts",
+          "line": 107,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-05T09:47:30.271Z",
+    "duration": 3030.279,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}
